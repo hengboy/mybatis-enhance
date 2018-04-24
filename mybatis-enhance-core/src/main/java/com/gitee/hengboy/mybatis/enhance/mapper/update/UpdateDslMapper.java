@@ -23,7 +23,7 @@
 package com.gitee.hengboy.mybatis.enhance.mapper.update;
 
 import com.gitee.hengboy.mybatis.enhance.common.annotation.ProviderMapper;
-import com.gitee.hengboy.mybatis.enhance.exception.OrmCoreFrameworkException;
+import com.gitee.hengboy.mybatis.enhance.exception.EnhanceFrameworkException;
 import com.gitee.hengboy.mybatis.enhance.provider.update.OrmUpdateDslProvider;
 import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.UpdateProvider;
@@ -49,9 +49,9 @@ public interface UpdateDslMapper<T, Id extends Serializable> {
      *
      * @param sql    更新sql语句
      * @param params 更新所需的参数列表
-     * @throws OrmCoreFrameworkException
+     * @throws EnhanceFrameworkException
      */
     @UpdateProvider(type = OrmUpdateDslProvider.class, method = "empty")
-    void updateBySql(@Param("sql") String sql, @Param("param") Map<String, Object> params) throws OrmCoreFrameworkException;
+    void updateBySql(@Param("sql") String sql, @Param("param") Map<String, Object> params) throws EnhanceFrameworkException;
 
 }

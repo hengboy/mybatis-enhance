@@ -23,7 +23,7 @@
 package com.gitee.hengboy.mybatis.enhance.mapper.insert;
 
 import com.gitee.hengboy.mybatis.enhance.common.annotation.ProviderMapper;
-import com.gitee.hengboy.mybatis.enhance.exception.OrmCoreFrameworkException;
+import com.gitee.hengboy.mybatis.enhance.exception.EnhanceFrameworkException;
 import com.gitee.hengboy.mybatis.enhance.provider.insert.OrmInsertCollectionProvider;
 import org.apache.ibatis.annotations.InsertProvider;
 import org.apache.ibatis.annotations.Param;
@@ -46,8 +46,8 @@ public interface InsertCollectionMapper<T, Id extends Serializable> {
      * 添加多条数据
      *
      * @param collection 持久化对象实例集合
-     * @throws OrmCoreFrameworkException
+     * @throws EnhanceFrameworkException
      */
     @InsertProvider(type = OrmInsertCollectionProvider.class, method = "empty")
-    void insertCollection(@Param("collection") Collection<T> collection) throws OrmCoreFrameworkException;
+    void insertCollection(@Param("collection") Collection<T> collection) throws EnhanceFrameworkException;
 }

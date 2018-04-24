@@ -23,7 +23,7 @@
 package com.gitee.hengboy.mybatis.enhance.mapper.insert;
 
 import com.gitee.hengboy.mybatis.enhance.common.annotation.ProviderMapper;
-import com.gitee.hengboy.mybatis.enhance.exception.OrmCoreFrameworkException;
+import com.gitee.hengboy.mybatis.enhance.exception.EnhanceFrameworkException;
 import com.gitee.hengboy.mybatis.enhance.provider.insert.OrmInsertArrayProvider;
 import org.apache.ibatis.annotations.InsertProvider;
 import org.apache.ibatis.annotations.Param;
@@ -45,8 +45,8 @@ public interface InsertArrayMapper<T, Id extends Serializable> {
      * 添加多条数据
      *
      * @param array 数组形式添加
-     * @throws OrmCoreFrameworkException
+     * @throws EnhanceFrameworkException
      */
     @InsertProvider(type = OrmInsertArrayProvider.class, method = "empty")
-    void insertArray(@Param("array") T... array) throws OrmCoreFrameworkException;
+    void insertArray(@Param("array") T... array) throws EnhanceFrameworkException;
 }

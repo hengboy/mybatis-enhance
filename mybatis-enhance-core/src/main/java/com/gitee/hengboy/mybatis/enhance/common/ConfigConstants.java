@@ -33,7 +33,7 @@ package com.gitee.hengboy.mybatis.enhance.common;
  * 简书：http://www.jianshu.com/u/092df3f77bca
  * ================================
  */
-public interface OrmConfigConstants {
+public interface ConfigConstants {
     /**
      * 单独参数的前缀
      */

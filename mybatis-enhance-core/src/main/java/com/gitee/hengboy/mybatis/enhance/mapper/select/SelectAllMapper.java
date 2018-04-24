@@ -23,7 +23,7 @@
 package com.gitee.hengboy.mybatis.enhance.mapper.select;
 
 import com.gitee.hengboy.mybatis.enhance.common.annotation.ProviderMapper;
-import com.gitee.hengboy.mybatis.enhance.exception.OrmCoreFrameworkException;
+import com.gitee.hengboy.mybatis.enhance.exception.EnhanceFrameworkException;
 import com.gitee.hengboy.mybatis.enhance.provider.select.OrmSelectAllProvider;
 import org.apache.ibatis.annotations.SelectProvider;
 
@@ -47,8 +47,8 @@ public interface SelectAllMapper<T, Id extends Serializable> {
      * SQL Provider To @see com.sanmi.framework.orm.core.provider.OrmSelectAllProvider#selectAll
      *
      * @return 查询集合
-     * @throws OrmCoreFrameworkException
+     * @throws EnhanceFrameworkException
      */
     @SelectProvider(type = OrmSelectAllProvider.class, method = "empty")
-    List<T> selectAll() throws OrmCoreFrameworkException;
+    List<T> selectAll() throws EnhanceFrameworkException;
 }

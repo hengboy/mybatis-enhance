@@ -23,7 +23,7 @@
 package com.gitee.hengboy.mybatis.enhance.mapper.insert;
 
 import com.gitee.hengboy.mybatis.enhance.common.annotation.ProviderMapper;
-import com.gitee.hengboy.mybatis.enhance.exception.OrmCoreFrameworkException;
+import com.gitee.hengboy.mybatis.enhance.exception.EnhanceFrameworkException;
 import com.gitee.hengboy.mybatis.enhance.provider.insert.OrmInsertProvider;
 import org.apache.ibatis.annotations.InsertProvider;
 import org.apache.ibatis.annotations.Param;
@@ -50,8 +50,8 @@ public interface InsertMapper<T, Id extends Serializable>
      * SQL Provider To @see com.sanmi.framework.orm.core.provider.OrmInsertProvider#insert
      *
      * @param t 将要持久化的对象实例
-     * @throws OrmCoreFrameworkException 抛出框架异常
+     * @throws EnhanceFrameworkException 抛出框架异常
      */
     @InsertProvider(type = OrmInsertProvider.class, method = "empty")
-    void insert(@Param("bean") T t) throws OrmCoreFrameworkException;
+    void insert(@Param("bean") T t) throws EnhanceFrameworkException;
 }

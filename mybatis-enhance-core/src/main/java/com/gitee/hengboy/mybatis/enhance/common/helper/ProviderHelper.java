@@ -22,7 +22,7 @@
  */
 package com.gitee.hengboy.mybatis.enhance.common.helper;
 
-import com.gitee.hengboy.mybatis.enhance.exception.OrmCoreFrameworkException;
+import com.gitee.hengboy.mybatis.enhance.exception.EnhanceFrameworkException;
 import com.gitee.hengboy.mybatis.enhance.named.helper.NamedMethodHelper;
 import com.gitee.hengboy.mybatis.enhance.provider.base.BaseProvider;
 import com.gitee.hengboy.mybatis.enhance.provider.named.MethodNamedCountProvider;
@@ -60,9 +60,9 @@ public class ProviderHelper {
      *
      * @param statementId MapperStatement的id值
      * @return
-     * @throws OrmCoreFrameworkException
+     * @throws EnhanceFrameworkException
      */
-    public static BaseProvider getMethodProvider(String statementId) throws OrmCoreFrameworkException {
+    public static BaseProvider getMethodProvider(String statementId) throws EnhanceFrameworkException {
         // 获取statementId对应的方法名称
         String methodName = StatementHelper.getMethodName(statementId);
         // 找到MappedStatementId对应的Mapper
@@ -78,7 +78,7 @@ public class ProviderHelper {
 
         // 并未配置@XxxProvider注解
         if (ObjectUtils.isEmpty(providerClass)) {
-            throw new OrmCoreFrameworkException("接口方法：" + mapperClass.getName() + "." + method.getName() + "，并未配置@XxxProvider注解，无法进行生成Provider具体类型的实例.");
+            throw new EnhanceFrameworkException("接口方法：" + mapperClass.getName() + "." + method.getName() + "，并未配置@XxxProvider注解，无法进行生成Provider具体类型的实例.");
         }
 
         // 构造函数初始化BaseProvider子类实例
@@ -88,7 +88,7 @@ public class ProviderHelper {
             provider = (BaseProvider) providerClass.getConstructor(Class.class, Class.class, Method.class).newInstance(mapperClass, entityClass, method);
         } catch (Exception e) {
             e.printStackTrace();
-            throw new OrmCoreFrameworkException("实例化：" + providerClass.getName() + " , 失败.");
+            throw new EnhanceFrameworkException("实例化：" + providerClass.getName() + " , 失败.");
         }
         return provider;
     }

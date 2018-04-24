@@ -24,7 +24,7 @@ package com.gitee.hengboy.mybatis.enhance;
 
 import com.gitee.hengboy.mybatis.enhance.common.helper.ProviderHelper;
 import com.gitee.hengboy.mybatis.enhance.common.helper.StatementHelper;
-import com.gitee.hengboy.mybatis.enhance.exception.OrmCoreFrameworkException;
+import com.gitee.hengboy.mybatis.enhance.exception.EnhanceFrameworkException;
 import com.gitee.hengboy.mybatis.enhance.named.helper.NamedMethodHelper;
 import com.gitee.hengboy.mybatis.enhance.provider.base.BaseProvider;
 import org.apache.ibatis.builder.annotation.ProviderSqlSource;
@@ -90,7 +90,7 @@ public class MappedStatementSupport {
      */
     public void namedSupport(Configuration configuration, Class<?> mapperClass) {
         if (ObjectUtils.isEmpty(mapperClass)) {
-            throw new OrmCoreFrameworkException("处理NamedMethod MappedStatement时，参数[mapperClass]为必填项.");
+            throw new EnhanceFrameworkException("处理NamedMethod MappedStatement时，参数[mapperClass]为必填项.");
         }
         // 获取Mapper内定义的方法不包含上级接口
         Method[] methods = mapperClass.getDeclaredMethods();

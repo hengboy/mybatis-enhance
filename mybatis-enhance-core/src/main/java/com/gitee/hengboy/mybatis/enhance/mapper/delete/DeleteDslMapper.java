@@ -23,7 +23,7 @@
 package com.gitee.hengboy.mybatis.enhance.mapper.delete;
 
 import com.gitee.hengboy.mybatis.enhance.common.annotation.ProviderMapper;
-import com.gitee.hengboy.mybatis.enhance.exception.OrmCoreFrameworkException;
+import com.gitee.hengboy.mybatis.enhance.exception.EnhanceFrameworkException;
 import com.gitee.hengboy.mybatis.enhance.provider.delete.OrmDeleteDslProvider;
 import org.apache.ibatis.annotations.DeleteProvider;
 import org.apache.ibatis.annotations.Param;
@@ -49,8 +49,8 @@ public interface DeleteDslMapper<T, Id extends Serializable> {
      *
      * @param sql    传递的动态删除的sql
      * @param params 参数列表
-     * @throws OrmCoreFrameworkException
+     * @throws EnhanceFrameworkException
      */
     @DeleteProvider(type = OrmDeleteDslProvider.class, method = "empty")
-    void deleteBySql(@Param("sql") String sql, @Param("param") Map<String, Object> params) throws OrmCoreFrameworkException;
+    void deleteBySql(@Param("sql") String sql, @Param("param") Map<String, Object> params) throws EnhanceFrameworkException;
 }

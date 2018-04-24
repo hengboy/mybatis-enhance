@@ -22,10 +22,10 @@
  */
 package com.gitee.hengboy.mybatis.enhance.common.helper.sql;
 
-import com.gitee.hengboy.mybatis.enhance.common.OrmConfigConstants;
+import com.gitee.hengboy.mybatis.enhance.common.ConfigConstants;
 import com.gitee.hengboy.mybatis.enhance.common.enums.PlaceholderEnum;
 import com.gitee.hengboy.mybatis.enhance.common.struct.ColumnStruct;
-import com.gitee.hengboy.mybatis.enhance.exception.OrmCoreFrameworkException;
+import com.gitee.hengboy.mybatis.enhance.exception.EnhanceFrameworkException;
 import com.gitee.hengboy.mybatis.enhance.named.OrPart;
 import com.gitee.hengboy.mybatis.enhance.named.helper.NamedMethodHelper;
 import org.apache.ibatis.jdbc.SQL;
@@ -53,11 +53,11 @@ public class MapperXmlMySqlHelper {
      *
      * @param expression 表达式内容
      * @return
-     * @throws OrmCoreFrameworkException
+     * @throws EnhanceFrameworkException
      */
-    public static String script(String expression, String... expressions) throws OrmCoreFrameworkException {
+    public static String script(String expression, String... expressions) throws EnhanceFrameworkException {
         if (StringUtils.isEmpty(expression)) {
-            throw new OrmCoreFrameworkException("生成xml形式的sql时请至少传递一个[expression].");
+            throw new EnhanceFrameworkException("生成xml形式的sql时请至少传递一个[expression].");
         }
         StringBuffer buffer = new StringBuffer();
         buffer.append("<script>");
@@ -79,9 +79,9 @@ public class MapperXmlMySqlHelper {
      * @param methodName     方法名称
      * @param columnMappings 列映射集合
      * @return
-     * @throws OrmCoreFrameworkException
+     * @throws EnhanceFrameworkException
      */
-    public static String named(String methodName, Map<String, ColumnStruct> columnMappings) throws OrmCoreFrameworkException {
+    public static String named(String methodName, Map<String, ColumnStruct> columnMappings) throws EnhanceFrameworkException {
         StringBuffer buffer = new StringBuffer();
         List<OrPart> orParts = NamedMethodHelper.getNamedWhereSql(methodName, columnMappings);
         if (!ObjectUtils.isEmpty(orParts)) {
@@ -112,11 +112,11 @@ public class MapperXmlMySqlHelper {
      *
      * @param tableName 表名
      * @return
-     * @throws OrmCoreFrameworkException
+     * @throws EnhanceFrameworkException
      */
-    public static String update(String tableName) throws OrmCoreFrameworkException {
+    public static String update(String tableName) throws EnhanceFrameworkException {
         if (StringUtils.isEmpty(tableName)) {
-            throw new OrmCoreFrameworkException("生成update表达式时，请传递[tableName].");
+            throw new EnhanceFrameworkException("生成update表达式时，请传递[tableName].");
         }
         StringBuffer buffer = new StringBuffer();
         buffer.append(PlaceholderEnum.UPDATE.getValue());
@@ -129,11 +129,11 @@ public class MapperXmlMySqlHelper {
      *
      * @param tableName 表名
      * @return
-     * @throws OrmCoreFrameworkException
+     * @throws EnhanceFrameworkException
      */
-    public static String delete(String tableName) throws OrmCoreFrameworkException {
+    public static String delete(String tableName) throws EnhanceFrameworkException {
         if (StringUtils.isEmpty(tableName)) {
-            throw new OrmCoreFrameworkException("生成deleteFrom表达式时，请传递[tableName].");
+            throw new EnhanceFrameworkException("生成deleteFrom表达式时，请传递[tableName].");
         }
         return PlaceholderEnum.DELETE_FROM.getValue() + tableName;
     }
@@ -144,14 +144,14 @@ public class MapperXmlMySqlHelper {
      * @param tableName 表名
      * @param columns   列名数组
      * @return
-     * @throws OrmCoreFrameworkException
+     * @throws EnhanceFrameworkException
      */
-    public static String select(String tableName, String[] columns) throws OrmCoreFrameworkException {
+    public static String select(String tableName, String[] columns) throws EnhanceFrameworkException {
         if (StringUtils.isEmpty(tableName)) {
-            throw new OrmCoreFrameworkException("生成selectFrom表达式时，请传递[tableName].");
+            throw new EnhanceFrameworkException("生成selectFrom表达式时，请传递[tableName].");
         }
         if (ObjectUtils.isEmpty(columns)) {
-            throw new OrmCoreFrameworkException("生成selectFrom表达式时，请传递[columns].");
+            throw new EnhanceFrameworkException("生成selectFrom表达式时，请传递[columns].");
         }
 
         return new SQL().SELECT(columns).FROM(tableName).toString();
@@ -165,11 +165,11 @@ public class MapperXmlMySqlHelper {
      *
      * @param expressions 表达式数组集合
      * @return
-     * @throws OrmCoreFrameworkException
+     * @throws EnhanceFrameworkException
      */
-    public static String set(String... expressions) throws OrmCoreFrameworkException {
+    public static String set(String... expressions) throws EnhanceFrameworkException {
         if (ObjectUtils.isEmpty(expressions)) {
-            throw new OrmCoreFrameworkException("生成update表达式时，请传递[sets].");
+            throw new EnhanceFrameworkException("生成update表达式时，请传递[sets].");
         }
 
         StringBuffer buffer = new StringBuffer();
@@ -194,11 +194,11 @@ public class MapperXmlMySqlHelper {
      * @param expression  表达式
      * @param expressions 表达式可变数组参数
      * @return
-     * @throws OrmCoreFrameworkException
+     * @throws EnhanceFrameworkException
      */
-    public static String where(String expression, String... expressions) throws OrmCoreFrameworkException {
+    public static String where(String expression, String... expressions) throws EnhanceFrameworkException {
         if (StringUtils.isEmpty(expression) && ObjectUtils.isEmpty(expressions)) {
-            throw new OrmCoreFrameworkException("where表达式生成时请至少传递一个[expression]表达式.");
+            throw new EnhanceFrameworkException("where表达式生成时请至少传递一个[expression]表达式.");
         }
         StringBuffer buffer = new StringBuffer();
         buffer.append("<where>");
@@ -225,11 +225,11 @@ public class MapperXmlMySqlHelper {
      * @param expression  表达式
      * @param expressions 表达式数据
      * @return
-     * @throws OrmCoreFrameworkException
+     * @throws EnhanceFrameworkException
      */
-    public static String ifNotNull(String paramName, String expression, String... expressions) throws OrmCoreFrameworkException {
+    public static String ifNotNull(String paramName, String expression, String... expressions) throws EnhanceFrameworkException {
         if (StringUtils.isEmpty(expression) && ObjectUtils.isEmpty(expressions)) {
-            throw new OrmCoreFrameworkException("if表达式生成时请至少传递一个[content].");
+            throw new EnhanceFrameworkException("if表达式生成时请至少传递一个[content].");
         }
 
         StringBuffer buffer = new StringBuffer();
@@ -254,11 +254,11 @@ public class MapperXmlMySqlHelper {
      * @param collection 集合名词
      * @param item       每一个项的名称
      * @return
-     * @throws OrmCoreFrameworkException
+     * @throws EnhanceFrameworkException
      */
-    public static String in(String columnName, String collection, String item) throws OrmCoreFrameworkException {
+    public static String in(String columnName, String collection, String item) throws EnhanceFrameworkException {
         if (StringUtils.isEmpty(columnName)) {
-            throw new OrmCoreFrameworkException("in表达式生成时需要传递[columnName]参数.");
+            throw new EnhanceFrameworkException("in表达式生成时需要传递[columnName]参数.");
         }
 
         StringBuffer buffer = new StringBuffer();
@@ -286,9 +286,9 @@ public class MapperXmlMySqlHelper {
      * @param separator  每一个项的分隔符
      * @return
      */
-    public static String foreach(String collection, String item, String open, String close, String separator) throws OrmCoreFrameworkException {
+    public static String foreach(String collection, String item, String open, String close, String separator) throws EnhanceFrameworkException {
         if (StringUtils.isEmpty(collection) || StringUtils.isEmpty(item) || StringUtils.isEmpty(separator)) {
-            throw new OrmCoreFrameworkException("请检查[collection]、[item]、[separator]等参数是否传递.");
+            throw new EnhanceFrameworkException("请检查[collection]、[item]、[separator]等参数是否传递.");
         }
         StringBuffer sqlBuffer = new StringBuffer("<foreach ");
         sqlBuffer.append("collection = '");
@@ -308,9 +308,9 @@ public class MapperXmlMySqlHelper {
         sqlBuffer.append("' separator = '");
         sqlBuffer.append(separator);
         sqlBuffer.append("'>");
-        sqlBuffer.append(OrmConfigConstants.PARAMETER_PREFIX);
+        sqlBuffer.append(ConfigConstants.PARAMETER_PREFIX);
         sqlBuffer.append(item);
-        sqlBuffer.append(OrmConfigConstants.PARAMETER_SUFFIX);
+        sqlBuffer.append(ConfigConstants.PARAMETER_SUFFIX);
         sqlBuffer.append("</foreach>");
         return sqlBuffer.toString();
     }
@@ -320,17 +320,17 @@ public class MapperXmlMySqlHelper {
      * 如：limit 20,10 或 limit 10
      *
      * @return
-     * @throws OrmCoreFrameworkException
+     * @throws EnhanceFrameworkException
      */
-    public static String pageable() throws OrmCoreFrameworkException {
+    public static String pageable() throws EnhanceFrameworkException {
         StringBuffer buffer = new StringBuffer();
         buffer.append(PlaceholderEnum.LIMIT.getValue());
         // 追加offset
-        buffer.append(ifNotNull(OrmConfigConstants.PAGEABLE_PARAMETER_OFFSET_CONTENT, OrmConfigConstants.PAGEABLE_PARAMETER_OFFSET + PlaceholderEnum.SPLIT.getValue()));
+        buffer.append(ifNotNull(ConfigConstants.PAGEABLE_PARAMETER_OFFSET_CONTENT, ConfigConstants.PAGEABLE_PARAMETER_OFFSET + PlaceholderEnum.SPLIT.getValue()));
         // 追加限制条数
-        buffer.append(OrmConfigConstants.PAGEABLE_PARAMETER_LIMIT);
+        buffer.append(ConfigConstants.PAGEABLE_PARAMETER_LIMIT);
 
-        return ifNotNull(OrmConfigConstants.PAGEABLE_PARAMETER_LIMIT_CONTENT, buffer.toString());
+        return ifNotNull(ConfigConstants.PAGEABLE_PARAMETER_LIMIT_CONTENT, buffer.toString());
     }
 
     /**
@@ -338,13 +338,13 @@ public class MapperXmlMySqlHelper {
      * 如：order by ${pageable.sort.sorter}
      *
      * @return
-     * @throws OrmCoreFrameworkException
+     * @throws EnhanceFrameworkException
      */
-    public static String sort() throws OrmCoreFrameworkException {
+    public static String sort() throws EnhanceFrameworkException {
         StringBuffer buffer = new StringBuffer();
         buffer.append(PlaceholderEnum.ORDER_BY.getValue());
-        buffer.append(OrmConfigConstants.PAGEABLE_ORDER_BY);
-        return ifNotNull(OrmConfigConstants.SORT_NAME, ifNotNull(OrmConfigConstants.SORT_COLUMN_NAME, buffer.toString()));
+        buffer.append(ConfigConstants.PAGEABLE_ORDER_BY);
+        return ifNotNull(ConfigConstants.SORT_NAME, ifNotNull(ConfigConstants.SORT_COLUMN_NAME, buffer.toString()));
     }
 
     /**
@@ -353,11 +353,11 @@ public class MapperXmlMySqlHelper {
      * @param tableName  表名
      * @param columnName 统计列的名称
      * @return
-     * @throws OrmCoreFrameworkException
+     * @throws EnhanceFrameworkException
      */
-    public static String count(String tableName, String columnName) throws OrmCoreFrameworkException {
+    public static String count(String tableName, String columnName) throws EnhanceFrameworkException {
         if (StringUtils.isEmpty(tableName) || StringUtils.isEmpty(columnName)) {
-            throw new OrmCoreFrameworkException("请检查[tableName]、[columnName]等参数是否传递.");
+            throw new EnhanceFrameworkException("请检查[tableName]、[columnName]等参数是否传递.");
         }
         StringBuffer buffer = new StringBuffer();
         buffer.append(PlaceholderEnum.SELECT.getValue());

@@ -23,7 +23,7 @@
 package com.gitee.hengboy.mybatis.enhance.mapper.select;
 
 import com.gitee.hengboy.mybatis.enhance.common.annotation.ProviderMapper;
-import com.gitee.hengboy.mybatis.enhance.exception.OrmCoreFrameworkException;
+import com.gitee.hengboy.mybatis.enhance.exception.EnhanceFrameworkException;
 import com.gitee.hengboy.mybatis.enhance.provider.select.OrmSelectDslProvider;
 import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.SelectProvider;
@@ -51,8 +51,8 @@ public interface SelectDslMapper<T, Id extends Serializable> {
      * @param sql    查询的sql
      * @param params 查询的参数
      * @return
-     * @throws OrmCoreFrameworkException
+     * @throws EnhanceFrameworkException
      */
     @SelectProvider(type = OrmSelectDslProvider.class, method = "empty")
-    List<Map> selectBySql(@Param("sql") String sql, @Param("param") Map<String, Object> params) throws OrmCoreFrameworkException;
+    List<Map> selectBySql(@Param("sql") String sql, @Param("param") Map<String, Object> params) throws EnhanceFrameworkException;
 }

@@ -22,7 +22,7 @@
  */
 package com.gitee.hengboy.mybatis.enhance.provider.select;
 
-import com.gitee.hengboy.mybatis.enhance.common.OrmConfigConstants;
+import com.gitee.hengboy.mybatis.enhance.common.ConfigConstants;
 import com.gitee.hengboy.mybatis.enhance.common.helper.sql.MapperXmlMySqlHelper;
 import com.gitee.hengboy.mybatis.enhance.common.mapping.ColumnMappingFilter;
 import com.gitee.hengboy.mybatis.enhance.common.mapping.ColumnMappingFilterBuilder;
@@ -71,8 +71,8 @@ public class OrmSelectArrayProvider extends BaseProvider {
                 MapperXmlMySqlHelper.where(
                         MapperXmlMySqlHelper.in(
                                 tableStruct.getIdName(),
-                                OrmConfigConstants.ARRAY_PARAMETER_NAME,
-                                OrmConfigConstants.PK_PARAMETER
+                                ConfigConstants.ARRAY_PARAMETER_NAME,
+                                ConfigConstants.PK_PARAMETER
                         )
                 )
         );

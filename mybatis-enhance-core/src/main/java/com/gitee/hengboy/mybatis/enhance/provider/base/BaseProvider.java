@@ -22,13 +22,13 @@
  */
 package com.gitee.hengboy.mybatis.enhance.provider.base;
 
-import com.gitee.hengboy.mybatis.enhance.common.OrmConfigConstants;
+import com.gitee.hengboy.mybatis.enhance.common.ConfigConstants;
 import com.gitee.hengboy.mybatis.enhance.common.enums.PlaceholderEnum;
 import com.gitee.hengboy.mybatis.enhance.common.helper.StatementHelper;
 import com.gitee.hengboy.mybatis.enhance.common.helper.TableHelper;
 import com.gitee.hengboy.mybatis.enhance.common.struct.ColumnStruct;
 import com.gitee.hengboy.mybatis.enhance.common.struct.TableStruct;
-import com.gitee.hengboy.mybatis.enhance.exception.OrmCoreFrameworkException;
+import com.gitee.hengboy.mybatis.enhance.exception.EnhanceFrameworkException;
 import lombok.Data;
 import org.apache.ibatis.executor.keygen.KeyGenerator;
 import org.apache.ibatis.mapping.MappedStatement;
@@ -162,7 +162,7 @@ public class BaseProvider {
             method.invoke(this, ms);
         } catch (Exception e) {
             e.printStackTrace();
-            throw new OrmCoreFrameworkException("MappedStatement：[" + ms.getId() + "]，执行重载SqlSource失败.");
+            throw new EnhanceFrameworkException("MappedStatement：[" + ms.getId() + "]，执行重载SqlSource失败.");
         }
     }
 
@@ -255,9 +255,9 @@ public class BaseProvider {
         StringBuffer buffer = new StringBuffer();
         buffer.append(tableStruct.getIdName());
         buffer.append(PlaceholderEnum.EQ.getValue());
-        buffer.append(OrmConfigConstants.BEAN_PARAMETER_PREFIX);
+        buffer.append(ConfigConstants.BEAN_PARAMETER_PREFIX);
         buffer.append(tableStruct.getIdFieldName());
-        buffer.append(OrmConfigConstants.PARAMETER_SUFFIX);
+        buffer.append(ConfigConstants.PARAMETER_SUFFIX);
         return buffer.toString();
     }
 
@@ -271,9 +271,9 @@ public class BaseProvider {
         StringBuffer buffer = new StringBuffer();
         buffer.append(tableStruct.getIdName());
         buffer.append(PlaceholderEnum.EQ.getValue());
-        buffer.append(OrmConfigConstants.PARAMETER_PREFIX);
-        buffer.append(OrmConfigConstants.PK_PARAMETER);
-        buffer.append(OrmConfigConstants.PARAMETER_SUFFIX);
+        buffer.append(ConfigConstants.PARAMETER_PREFIX);
+        buffer.append(ConfigConstants.PK_PARAMETER);
+        buffer.append(ConfigConstants.PARAMETER_SUFFIX);
         return buffer.toString();
     }
 

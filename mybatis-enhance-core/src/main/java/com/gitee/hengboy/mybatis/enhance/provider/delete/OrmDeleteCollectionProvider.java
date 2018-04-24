@@ -22,7 +22,7 @@
  */
 package com.gitee.hengboy.mybatis.enhance.provider.delete;
 
-import com.gitee.hengboy.mybatis.enhance.common.OrmConfigConstants;
+import com.gitee.hengboy.mybatis.enhance.common.ConfigConstants;
 import com.gitee.hengboy.mybatis.enhance.common.helper.sql.MapperXmlMySqlHelper;
 import com.gitee.hengboy.mybatis.enhance.common.struct.TableStruct;
 import com.gitee.hengboy.mybatis.enhance.mapper.CrudMapper;
@@ -77,7 +77,7 @@ public class OrmDeleteCollectionProvider extends BaseProvider {
         String sql = MapperXmlMySqlHelper.script(
                 MapperXmlMySqlHelper.delete(tableStruct.getTableName()),
                 MapperXmlMySqlHelper.where(
-                        MapperXmlMySqlHelper.in(tableStruct.getIdName(), OrmConfigConstants.COLLECTION_PARAMETER_NAME, OrmConfigConstants.PK_PARAMETER)
+                        MapperXmlMySqlHelper.in(tableStruct.getIdName(), ConfigConstants.COLLECTION_PARAMETER_NAME, ConfigConstants.PK_PARAMETER)
                 )
         );
 
