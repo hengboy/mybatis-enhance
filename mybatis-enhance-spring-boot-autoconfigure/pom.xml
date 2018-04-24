@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>mybatis-enhance</artifactId>
+        <groupId>com.gitee.hengboy</groupId>
+        <version>1.0.0</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>mybatis-enhance-spring-boot-autoconfigure</artifactId>
+
+    <properties>
+        <!--orm依赖版本-->
+        <mybatis.enhance.version>1.0.0</mybatis.enhance.version>
+    </properties>
+    <dependencies>
+        <!--SpringBoot自定义自动化配置依赖-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-autoconfigure</artifactId>
+        </dependency>
+        <!-- @ConfigurationProperties annotation processing (metadata for IDEs) -->
+        <!--元数据依赖，用于IDEs工具application.yml/properties提示使用-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-configuration-processor</artifactId>
+            <optional>true</optional>
+        </dependency>
+
+        <!--MyBatis-Enhance核心依赖-->
+        <dependency>
+            <groupId>com.gitee.hengboy</groupId>
+            <artifactId>mybatis-enhance-core</artifactId>
+            <version>${mybatis.enhance.version}</version>
+        </dependency>
+    </dependencies>
+</project>

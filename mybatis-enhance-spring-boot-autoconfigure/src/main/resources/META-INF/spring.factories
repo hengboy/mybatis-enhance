@@ -1,0 +1,3 @@
+#配置持久化框架自动化配置
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+  com.gitee.hengboy.enhance.spring.boot.autoconfigure.MyBatisEnhanceAutoConfiguration
