@@ -22,7 +22,7 @@
  */
 package com.gitee.hengboy.mybatis.enhance.mapper.insert;
 
-import com.gitee.hengboy.mybatis.enhance.annotation.ProviderMapper;
+import com.gitee.hengboy.mybatis.enhance.common.annotation.ProviderMapper;
 import com.gitee.hengboy.mybatis.enhance.exception.OrmCoreFrameworkException;
 import com.gitee.hengboy.mybatis.enhance.provider.insert.OrmInsertProvider;
 import org.apache.ibatis.annotations.InsertProvider;
