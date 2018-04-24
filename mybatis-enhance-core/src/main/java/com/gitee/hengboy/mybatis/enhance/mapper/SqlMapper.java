@@ -23,7 +23,7 @@
 package com.gitee.hengboy.mybatis.enhance.mapper;
 
 
-import com.gitee.hengboy.mybatis.enhance.annotation.ProviderMapper;
+import com.gitee.hengboy.mybatis.enhance.common.annotation.ProviderMapper;
 
 import java.io.Serializable;
 
