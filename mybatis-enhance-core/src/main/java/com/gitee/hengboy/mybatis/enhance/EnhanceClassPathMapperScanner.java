@@ -54,12 +54,12 @@ import java.util.Set;
  * 简书：http://www.jianshu.com/u/092df3f77bca
  * ================================
  */
-public class OrmClassPathMapperScanner extends ClassPathBeanDefinitionScanner {
+public class EnhanceClassPathMapperScanner extends ClassPathBeanDefinitionScanner {
 
     /**
      * logger instance
      */
-    static Logger logger = LoggerFactory.getLogger(OrmClassPathMapperScanner.class);
+    static Logger logger = LoggerFactory.getLogger(EnhanceClassPathMapperScanner.class);
 
     private boolean addToConfig = true;
     private SqlSessionFactory sqlSessionFactory;
@@ -75,7 +75,7 @@ public class OrmClassPathMapperScanner extends ClassPathBeanDefinitionScanner {
      */
     private MappedStatementSupport mappedStatementSupport = new MappedStatementSupport();
 
-    public OrmClassPathMapperScanner(BeanDefinitionRegistry registry) {
+    public EnhanceClassPathMapperScanner(BeanDefinitionRegistry registry) {
         super(registry, false);
     }
 
@@ -98,7 +98,7 @@ public class OrmClassPathMapperScanner extends ClassPathBeanDefinitionScanner {
      */
     void processBeanDefinitions(Set<BeanDefinitionHolder> beanDefinitionHolders) {
         for (BeanDefinitionHolder definitionHolder : beanDefinitionHolders) {
-            logger.debug("HPersistence Scanning to [{}].", definitionHolder.getBeanName());
+            logger.debug("Enhance Scanning to [{}].", definitionHolder.getBeanName());
             GenericBeanDefinition definition = (GenericBeanDefinition) definitionHolder.getBeanDefinition();
             // 设置泛型的类型
             definition.getConstructorArgumentValues().addGenericArgumentValue(definition.getBeanClassName());
