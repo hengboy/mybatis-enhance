@@ -23,7 +23,7 @@
 package com.gitee.hengboy.enhance.spring.boot.autoconfigure;
 
 import com.gitee.hengboy.mybatis.enhance.MapperFactoryBean;
-import com.gitee.hengboy.mybatis.enhance.OrmClassPathMapperScanner;
+import com.gitee.hengboy.mybatis.enhance.EnhanceClassPathMapperScanner;
 import com.gitee.hengboy.mybatis.enhance.mapper.EnhanceMapper;
 import org.apache.ibatis.mapping.DatabaseIdProvider;
 import org.apache.ibatis.plugin.Interceptor;
@@ -201,10 +201,10 @@ public class MyBatisEnhanceAutoConfiguration {
         @Override
         public void registerBeanDefinitions(AnnotationMetadata importingClassMetadata, BeanDefinitionRegistry registry) {
 
-            logger.debug("Searching for mappers based with SanmiMapper.class");
+            logger.debug("Searching for mappers based with EnhanceMapper.class");
             // 重写扫描实现类
             // 将扫描到的每一个类
-            OrmClassPathMapperScanner scanner = new OrmClassPathMapperScanner(registry);
+            EnhanceClassPathMapperScanner scanner = new EnhanceClassPathMapperScanner(registry);
             try {
                 if (this.resourceLoader != null) {
                     scanner.setResourceLoader(this.resourceLoader);
