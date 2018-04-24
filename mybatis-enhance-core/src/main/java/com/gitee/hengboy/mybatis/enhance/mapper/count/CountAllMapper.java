@@ -23,7 +23,7 @@
 package com.gitee.hengboy.mybatis.enhance.mapper.count;
 
 import com.gitee.hengboy.mybatis.enhance.common.annotation.ProviderMapper;
-import com.gitee.hengboy.mybatis.enhance.exception.OrmCoreFrameworkException;
+import com.gitee.hengboy.mybatis.enhance.exception.EnhanceFrameworkException;
 import com.gitee.hengboy.mybatis.enhance.provider.count.CountAllProvider;
 import org.apache.ibatis.annotations.SelectProvider;
 
@@ -46,8 +46,8 @@ public interface CountAllMapper<T, Id extends Serializable> {
      * 根据主键统计表内的全部数据
      *
      * @return
-     * @throws OrmCoreFrameworkException
+     * @throws EnhanceFrameworkException
      */
     @SelectProvider(type = CountAllProvider.class, method = "empty")
-    Long countAll() throws OrmCoreFrameworkException;
+    Long countAll() throws EnhanceFrameworkException;
 }

@@ -23,7 +23,7 @@
 package com.gitee.hengboy.mybatis.enhance.mapper.delete;
 
 import com.gitee.hengboy.mybatis.enhance.common.annotation.ProviderMapper;
-import com.gitee.hengboy.mybatis.enhance.exception.OrmCoreFrameworkException;
+import com.gitee.hengboy.mybatis.enhance.exception.EnhanceFrameworkException;
 import com.gitee.hengboy.mybatis.enhance.provider.delete.DeleteAllProvider;
 import org.apache.ibatis.annotations.DeleteProvider;
 
@@ -43,8 +43,8 @@ public interface DeleteAllMapper<T, Id extends Serializable> {
     /**
      * 删除全部方法
      *
-     * @throws OrmCoreFrameworkException
+     * @throws EnhanceFrameworkException
      */
     @DeleteProvider(type = DeleteAllProvider.class, method = "empty")
-    void deleteAll() throws OrmCoreFrameworkException;
+    void deleteAll() throws EnhanceFrameworkException;
 }

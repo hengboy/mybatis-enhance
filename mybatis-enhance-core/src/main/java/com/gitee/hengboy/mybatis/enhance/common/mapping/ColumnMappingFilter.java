@@ -22,10 +22,10 @@
  */
 package com.gitee.hengboy.mybatis.enhance.common.mapping;
 
-import com.gitee.hengboy.mybatis.enhance.common.OrmConfigConstants;
+import com.gitee.hengboy.mybatis.enhance.common.ConfigConstants;
 import com.gitee.hengboy.mybatis.enhance.common.enums.KeyGeneratorTypeEnum;
 import com.gitee.hengboy.mybatis.enhance.common.struct.ColumnStruct;
-import com.gitee.hengboy.mybatis.enhance.exception.OrmCoreFrameworkException;
+import com.gitee.hengboy.mybatis.enhance.exception.EnhanceFrameworkException;
 import com.gitee.hengboy.mybatis.enhance.key.generator.UUIDKeyGenerator;
 import org.apache.ibatis.executor.keygen.KeyGenerator;
 import org.apache.ibatis.executor.keygen.NoKeyGenerator;
@@ -78,7 +78,7 @@ public class ColumnMappingFilter {
                 return columnStruct;
             }
         }
-        throw new OrmCoreFrameworkException("并未查询到配置了@Id的字段.");
+        throw new EnhanceFrameworkException("并未查询到配置了@Id的字段.");
     }
 
     /**
@@ -97,7 +97,7 @@ public class ColumnMappingFilter {
         // 获取@Id内配置的generatorType枚举
         KeyGeneratorTypeEnum keyGeneratorTypeEnum = idColumnStruct.getGeneratorType();
         if (ObjectUtils.isEmpty(keyGeneratorTypeEnum)) {
-            throw new OrmCoreFrameworkException("并未查询到@Id内配置的generatorType主键策略.");
+            throw new EnhanceFrameworkException("并未查询到@Id内配置的generatorType主键策略.");
         }
 
         KeyGenerator keyGenerator;
@@ -143,7 +143,7 @@ public class ColumnMappingFilter {
         for (ColumnStruct columnStruct : mappingFilterBuilder.getColumnStructList()) {
             // 是否添加到集合的标识为true时执行添加
             if (isAddToList(columnStruct)) {
-                columnValues.add(OrmConfigConstants.BEAN_PARAMETER_PREFIX + columnStruct.getFieldName() + OrmConfigConstants.PARAMETER_SUFFIX);
+                columnValues.add(ConfigConstants.BEAN_PARAMETER_PREFIX + columnStruct.getFieldName() + ConfigConstants.PARAMETER_SUFFIX);
             }
         }
         return columnValues.toArray(new String[columnValues.size()]);

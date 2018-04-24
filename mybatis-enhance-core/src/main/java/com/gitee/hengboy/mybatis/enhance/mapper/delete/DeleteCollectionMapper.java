@@ -23,7 +23,7 @@
 package com.gitee.hengboy.mybatis.enhance.mapper.delete;
 
 import com.gitee.hengboy.mybatis.enhance.common.annotation.ProviderMapper;
-import com.gitee.hengboy.mybatis.enhance.exception.OrmCoreFrameworkException;
+import com.gitee.hengboy.mybatis.enhance.exception.EnhanceFrameworkException;
 import com.gitee.hengboy.mybatis.enhance.provider.delete.OrmDeleteCollectionProvider;
 import org.apache.ibatis.annotations.DeleteProvider;
 import org.apache.ibatis.annotations.Param;
@@ -47,8 +47,8 @@ public interface DeleteCollectionMapper<T, Id extends Serializable> {
      * 根据主键值集合删除多条记录
      *
      * @param collection
-     * @throws OrmCoreFrameworkException
+     * @throws EnhanceFrameworkException
      */
     @DeleteProvider(type = OrmDeleteCollectionProvider.class, method = "empty")
-    void deleteCollection(@Param("collection") Collection<Id> collection) throws OrmCoreFrameworkException;
+    void deleteCollection(@Param("collection") Collection<Id> collection) throws EnhanceFrameworkException;
 }

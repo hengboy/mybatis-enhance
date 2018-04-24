@@ -25,7 +25,7 @@ package com.gitee.hengboy.mybatis.enhance.common.helper;
 import com.gitee.hengboy.mybatis.enhance.common.annotation.Table;
 import com.gitee.hengboy.mybatis.enhance.common.struct.ColumnStruct;
 import com.gitee.hengboy.mybatis.enhance.common.struct.TableStruct;
-import com.gitee.hengboy.mybatis.enhance.exception.OrmCoreFrameworkException;
+import com.gitee.hengboy.mybatis.enhance.exception.EnhanceFrameworkException;
 import org.apache.ibatis.cache.Cache;
 import org.apache.ibatis.cache.decorators.SoftCache;
 import org.apache.ibatis.cache.impl.PerpetualCache;
@@ -64,9 +64,9 @@ public final class TableHelper {
      *
      * @param entityClass Mapper类型名称
      * @return 表结构映射工具类
-     * @throws OrmCoreFrameworkException
+     * @throws EnhanceFrameworkException
      */
-    public static TableStruct getTableStruct(Class<?> entityClass) throws OrmCoreFrameworkException {
+    public static TableStruct getTableStruct(Class<?> entityClass) throws EnhanceFrameworkException {
         // 从缓存内获取TableStruct
         Object object = TABLE_CACHE.getObject(entityClass.getName());
         // 缓存内存在直接返回
@@ -85,9 +85,9 @@ public final class TableHelper {
      *
      * @param entityClass 实体类型
      * @return
-     * @throws OrmCoreFrameworkException
+     * @throws EnhanceFrameworkException
      */
-    public static List<ColumnStruct> getColumnStruct(Class<?> entityClass) throws OrmCoreFrameworkException {
+    public static List<ColumnStruct> getColumnStruct(Class<?> entityClass) throws EnhanceFrameworkException {
         // 获取实体对应的列信息
         Object object = COLUMN_CACHE.getObject(entityClass.getName());
         if (!ObjectUtils.isEmpty(object)) {
@@ -107,9 +107,9 @@ public final class TableHelper {
      *
      * @param entityClass 实体类型
      * @return
-     * @throws OrmCoreFrameworkException
+     * @throws EnhanceFrameworkException
      */
-    static TableStruct loadTableStruct(Class<?> entityClass) throws OrmCoreFrameworkException {
+    static TableStruct loadTableStruct(Class<?> entityClass) throws EnhanceFrameworkException {
 
         // 不存在时，创建并初始化信息
         TableStruct tableStruct = new TableStruct();
@@ -133,7 +133,7 @@ public final class TableHelper {
     public static String getTableName(Class<?> entityClass) {
         //非空处理
         if (entityClass == null) {
-            throw new OrmCoreFrameworkException("The parameter：[entityClass] is null，getTableName Faild!");
+            throw new EnhanceFrameworkException("The parameter：[entityClass] is null，getTableName Faild!");
         }
         // 表名，默认使用类名驼峰命名
         String tableName = NameDefineHelper.camelToUnderline(entityClass.getSimpleName());

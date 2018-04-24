@@ -23,7 +23,7 @@
 package com.gitee.hengboy.mybatis.enhance.common.helper;
 
 
-import com.gitee.hengboy.mybatis.enhance.exception.OrmCoreFrameworkException;
+import com.gitee.hengboy.mybatis.enhance.exception.EnhanceFrameworkException;
 
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
@@ -132,7 +132,7 @@ public class ReflectionHelper {
             }
         }
         if (field == null) {
-            throw new OrmCoreFrameworkException("Not Found Field：" + fieldName + " in Class " + clazz.getName() + " and super Class.");
+            throw new EnhanceFrameworkException("Not Found Field：" + fieldName + " in Class " + clazz.getName() + " and super Class.");
         }
         return field;
     }

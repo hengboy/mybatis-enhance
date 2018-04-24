@@ -23,7 +23,7 @@
 package com.gitee.hengboy.mybatis.enhance.mapper.update;
 
 import com.gitee.hengboy.mybatis.enhance.common.annotation.ProviderMapper;
-import com.gitee.hengboy.mybatis.enhance.exception.OrmCoreFrameworkException;
+import com.gitee.hengboy.mybatis.enhance.exception.EnhanceFrameworkException;
 import com.gitee.hengboy.mybatis.enhance.provider.update.OrmUpdateProvider;
 import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.UpdateProvider;
@@ -49,8 +49,8 @@ public interface UpdateMapper<T, Id extends Serializable>
      * 更新单条对象实例
      *
      * @param t 对象实例
-     * @throws OrmCoreFrameworkException
+     * @throws EnhanceFrameworkException
      */
     @UpdateProvider(type = OrmUpdateProvider.class, method = "empty")
-    void update(@Param("bean") T t) throws OrmCoreFrameworkException;
+    void update(@Param("bean") T t) throws EnhanceFrameworkException;
 }

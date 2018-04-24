@@ -22,7 +22,7 @@
  */
 package com.gitee.hengboy.mybatis.enhance.common.helper;
 
-import com.gitee.hengboy.mybatis.enhance.exception.OrmCoreFrameworkException;
+import com.gitee.hengboy.mybatis.enhance.exception.EnhanceFrameworkException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.util.ObjectUtils;
@@ -56,7 +56,7 @@ public final class MapperHelper {
      */
     public static Method getMethod(String methodName, Class<?> mapperClass) {
         if (StringUtils.isEmpty(methodName) || ObjectUtils.isEmpty(mapperClass)) {
-            throw new OrmCoreFrameworkException("无法获取方法反射实例，请检查传递的参数.");
+            throw new EnhanceFrameworkException("无法获取方法反射实例，请检查传递的参数.");
         }
         // 获取Mapper内的所有方法以及继承的所有接口
         Method[] methods = mapperClass.getMethods();
@@ -65,6 +65,6 @@ public final class MapperHelper {
                 return method;
             }
         }
-        throw new OrmCoreFrameworkException("接口：" + mapperClass.getName() + "内并未找到定义的方法：" + methodName);
+        throw new EnhanceFrameworkException("接口：" + mapperClass.getName() + "内并未找到定义的方法：" + methodName);
     }
 }

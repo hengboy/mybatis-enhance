@@ -23,7 +23,7 @@
 package com.gitee.hengboy.mybatis.enhance.mapper;
 
 import com.gitee.hengboy.mybatis.enhance.common.annotation.ProviderMapper;
-import com.gitee.hengboy.mybatis.enhance.exception.OrmCoreFrameworkException;
+import com.gitee.hengboy.mybatis.enhance.exception.EnhanceFrameworkException;
 import com.gitee.hengboy.mybatis.enhance.page.Pageable;
 import com.gitee.hengboy.mybatis.enhance.provider.select.OrmSelectPageableProvider;
 import org.apache.ibatis.annotations.Param;
@@ -49,9 +49,9 @@ public interface PageableMapper<T, Id extends Serializable> {
      *
      * @param pageable 分页对象
      * @return
-     * @throws OrmCoreFrameworkException
+     * @throws EnhanceFrameworkException
      */
     @SelectProvider(type = OrmSelectPageableProvider.class, method = "empty")
-    List<T> selectByPageable(@Param("pageable") Pageable pageable) throws OrmCoreFrameworkException;
+    List<T> selectByPageable(@Param("pageable") Pageable pageable) throws EnhanceFrameworkException;
 
 }

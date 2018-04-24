@@ -23,7 +23,7 @@
 package com.gitee.hengboy.mybatis.enhance.mapper.select;
 
 import com.gitee.hengboy.mybatis.enhance.common.annotation.ProviderMapper;
-import com.gitee.hengboy.mybatis.enhance.exception.OrmCoreFrameworkException;
+import com.gitee.hengboy.mybatis.enhance.exception.EnhanceFrameworkException;
 import com.gitee.hengboy.mybatis.enhance.provider.select.OrmSelectArrayProvider;
 import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.SelectProvider;
@@ -47,8 +47,8 @@ public interface SelectArrayMapper<T, Id extends Serializable> {
      *
      * @param ids 主键编号集合
      * @return
-     * @throws OrmCoreFrameworkException
+     * @throws EnhanceFrameworkException
      */
     @SelectProvider(type = OrmSelectArrayProvider.class, method = "empty")
-    List<T> selectArray(@Param("array") Id... ids) throws OrmCoreFrameworkException;
+    List<T> selectArray(@Param("array") Id... ids) throws EnhanceFrameworkException;
 }

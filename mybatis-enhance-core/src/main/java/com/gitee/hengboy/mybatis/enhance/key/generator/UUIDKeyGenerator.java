@@ -22,8 +22,8 @@
  */
 package com.gitee.hengboy.mybatis.enhance.key.generator;
 
-import com.gitee.hengboy.mybatis.enhance.common.OrmConfigConstants;
-import com.gitee.hengboy.mybatis.enhance.exception.OrmCoreFrameworkException;
+import com.gitee.hengboy.mybatis.enhance.common.ConfigConstants;
+import com.gitee.hengboy.mybatis.enhance.exception.EnhanceFrameworkException;
 import org.apache.ibatis.executor.Executor;
 import org.apache.ibatis.executor.ExecutorException;
 import org.apache.ibatis.executor.keygen.KeyGenerator;
@@ -74,7 +74,7 @@ public class UUIDKeyGenerator
         // 获取主键的FieldName
         String[] keyProperties = ms.getKeyProperties();
         if (ObjectUtils.isEmpty(keyProperties)) {
-            throw new OrmCoreFrameworkException("并未设置主键字段，无法根据主键策略生成对应的主键值.");
+            throw new EnhanceFrameworkException("并未设置主键字段，无法根据主键策略生成对应的主键值.");
         }
         Configuration configuration = ms.getConfiguration();
         // 遍历所有的参数，分别设置主键的值
@@ -119,8 +119,8 @@ public class UUIDKeyGenerator
         } else if (parameter instanceof Map) {
             Map parameterMap = (Map) parameter;
             // 如果参数map内存在,key=collection的@Param时
-            if (parameterMap.containsKey(OrmConfigConstants.COLLECTION_PARAMETER_NAME)) {
-                Object collection = parameterMap.get(OrmConfigConstants.COLLECTION_PARAMETER_NAME);
+            if (parameterMap.containsKey(ConfigConstants.COLLECTION_PARAMETER_NAME)) {
+                Object collection = parameterMap.get(ConfigConstants.COLLECTION_PARAMETER_NAME);
                 if (collection instanceof Collection) {
                     parameters = (Collection) collection;
                 } else if (collection instanceof Object[]) {
@@ -128,16 +128,16 @@ public class UUIDKeyGenerator
                 }
             }
             // 如果参数map内存在,key=array的@Param时
-            else if (parameterMap.containsKey(OrmConfigConstants.LIST_PARAMETER_NAME)) {
-                parameters = (List) parameterMap.get(OrmConfigConstants.LIST_PARAMETER_NAME);
+            else if (parameterMap.containsKey(ConfigConstants.LIST_PARAMETER_NAME)) {
+                parameters = (List) parameterMap.get(ConfigConstants.LIST_PARAMETER_NAME);
             }
             // 如果参数map内存在,key=array的@Param时
-            else if (parameterMap.containsKey(OrmConfigConstants.ARRAY_PARAMETER_NAME)) {
-                parameters = Arrays.asList((Object[]) parameterMap.get(OrmConfigConstants.ARRAY_PARAMETER_NAME));
+            else if (parameterMap.containsKey(ConfigConstants.ARRAY_PARAMETER_NAME)) {
+                parameters = Arrays.asList((Object[]) parameterMap.get(ConfigConstants.ARRAY_PARAMETER_NAME));
             }
             // 如果参数map内存在,key=bean的@Param时
-            else if (parameterMap.containsKey(OrmConfigConstants.BEAN_PARAMETER_NAME)) {
-                parameters = Arrays.asList((Object) parameterMap.get(OrmConfigConstants.BEAN_PARAMETER_NAME));
+            else if (parameterMap.containsKey(ConfigConstants.BEAN_PARAMETER_NAME)) {
+                parameters = Arrays.asList((Object) parameterMap.get(ConfigConstants.BEAN_PARAMETER_NAME));
             }
         }
 

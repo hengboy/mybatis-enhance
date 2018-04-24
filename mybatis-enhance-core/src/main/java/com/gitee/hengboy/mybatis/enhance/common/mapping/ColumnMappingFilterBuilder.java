@@ -23,7 +23,7 @@
 package com.gitee.hengboy.mybatis.enhance.common.mapping;
 
 import com.gitee.hengboy.mybatis.enhance.common.struct.ColumnStruct;
-import com.gitee.hengboy.mybatis.enhance.exception.OrmCoreFrameworkException;
+import com.gitee.hengboy.mybatis.enhance.exception.EnhanceFrameworkException;
 import lombok.Builder;
 import lombok.Data;
 import org.springframework.util.ObjectUtils;
@@ -74,13 +74,13 @@ public class ColumnMappingFilterBuilder {
          * 检查列映射集合是否传递
          */
         if (ObjectUtils.isEmpty(getColumnStructList())) {
-            throw new OrmCoreFrameworkException("必须传递列映射集合列表.");
+            throw new EnhanceFrameworkException("必须传递列映射集合列表.");
         }
         /**
          * 检查映射枚举是否传递
          */
         if (ObjectUtils.isEmpty(mappingType)) {
-            throw new OrmCoreFrameworkException("必须传递映射类型枚举：MappingTypeEnum的值.");
+            throw new EnhanceFrameworkException("必须传递映射类型枚举：MappingTypeEnum的值.");
         }
     }
 }

@@ -31,13 +31,13 @@ package com.gitee.hengboy.mybatis.enhance.exception;
  * 简书：http://www.jianshu.com/u/092df3f77bca
  * ================================
  */
-public class OrmCoreFrameworkException extends RuntimeException {
+public class EnhanceFrameworkException extends RuntimeException {
 
-    public OrmCoreFrameworkException() {
+    public EnhanceFrameworkException() {
         super();
     }
 
-    public OrmCoreFrameworkException(String message) {
+    public EnhanceFrameworkException(String message) {
         super(message);
     }
 }

@@ -23,7 +23,7 @@
 package com.gitee.hengboy.mybatis.enhance.named.helper;
 
 import com.gitee.hengboy.mybatis.enhance.common.struct.ColumnStruct;
-import com.gitee.hengboy.mybatis.enhance.exception.OrmCoreFrameworkException;
+import com.gitee.hengboy.mybatis.enhance.exception.EnhanceFrameworkException;
 import com.gitee.hengboy.mybatis.enhance.named.OrPart;
 import org.springframework.util.ObjectUtils;
 import org.springframework.util.StringUtils;
@@ -186,7 +186,7 @@ public final class NamedMethodHelper {
                      */
                     ColumnStruct struct = mappings.get(andPart);
                     if (ObjectUtils.isEmpty(struct)) {
-                        throw new OrmCoreFrameworkException("未找到【" + andPart + "】字段，请检查Mapper泛型实体类内是否创建该字段!");
+                        throw new EnhanceFrameworkException("未找到【" + andPart + "】字段，请检查Mapper泛型实体类内是否创建该字段!");
                     }
                     buffer.append(struct.getColumnName());
                     buffer.append(" = ");
