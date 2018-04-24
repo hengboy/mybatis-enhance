@@ -1,6 +1,7 @@
 # mybatis-enhance
 
 [![star](https://gitee.com/hengboy/mybatis-enhance/badge/star.svg?theme=gray)](https://gitee.com/hengboy/mybatis-enhance/stargazers)
+[![fork](https://gitee.com/hengboy/mybatis-enhance/badge/fork.svg?theme=gray)](https://gitee.com/hengboy/mybatis-enhance/members)
 
 #### 项目介绍
 MyBatis增强版本框架
