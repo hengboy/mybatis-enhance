@@ -1,18 +1,18 @@
 /**
  * The MIT License (MIT)
- *
+ * <p>
  * Copyright (c) 2018 恒宇少年
- *
+ * <p>
  * Permission is hereby granted, free of charge, to any person obtaining a copy of
  * this software and associated documentation files (the "Software"), to deal in
  * the Software without restriction, including without limitation the rights to
  * use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of
  * the Software, and to permit persons to whom the Software is furnished to do so,
  * subject to the following conditions:
- *
+ * <p>
  * The above copyright notice and this permission notice shall be included in all
  * copies or substantial portions of the Software.
- *
+ * <p>
  * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
  * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS
  * FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR
@@ -53,10 +53,10 @@ public class UUIDKeyGenerator
     /**
      * 在执行insert之前设置对应主键的值
      *
-     * @param executor
-     * @param ms
-     * @param statement
-     * @param parameter
+     * @param executor 执行对象
+     * @param ms MappedStatement对象实例
+     * @param statement Statement数据对象实例
+     * @param parameter 参数对象
      */
     @Override
     public void processBefore(Executor executor, MappedStatement ms, Statement statement, Object parameter) {
@@ -85,8 +85,15 @@ public class UUIDKeyGenerator
         }
     }
 
+    /**
+     * 执行后的方法
+     * @param executor 执行对象
+     * @param ms MappedStatement对象实例
+     * @param statement Statement数据对象实例
+     * @param parameter 参数对象
+     */
     @Override
-    public void processAfter(Executor executor, MappedStatement ms, Statement stmt, Object parameter) {
+    public void processAfter(Executor executor, MappedStatement ms, Statement statement, Object parameter) {
 
     }
 
@@ -108,8 +115,8 @@ public class UUIDKeyGenerator
     /**
      * 沿用Jdbc3KeyGenerator内解析参数的方法实现
      *
-     * @param parameter
-     * @return
+     * @param parameter 请求对象
+     * @return 参数集合
      * @see org.apache.ibatis.executor.keygen.Jdbc3KeyGenerator
      */
     private Collection<Object> getParameters(Object parameter) {

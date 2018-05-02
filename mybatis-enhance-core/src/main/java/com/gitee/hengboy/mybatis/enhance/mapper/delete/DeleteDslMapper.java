@@ -34,7 +34,7 @@ import java.util.Map;
 /**
  * 动态删除Mapper数据接口
  *
- * @author：于起宇 <br/>
+ * @author：于起宇
  * ===============================
  * Created with IDEA.
  * Date：2018/4/18
@@ -49,7 +49,7 @@ public interface DeleteDslMapper<T, Id extends Serializable> {
      *
      * @param sql    传递的动态删除的sql
      * @param params 参数列表
-     * @throws EnhanceFrameworkException
+     * @throws EnhanceFrameworkException 增强框架异常
      */
     @DeleteProvider(type = OrmDeleteDslProvider.class, method = "empty")
     void deleteBySql(@Param("sql") String sql, @Param("param") Map<String, Object> params) throws EnhanceFrameworkException;

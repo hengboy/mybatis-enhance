@@ -31,7 +31,7 @@ import java.io.Serializable;
 import java.util.List;
 
 /**
- * @author：于起宇 <br/>
+ * @author：于起宇
  * ===============================
  * Created with IDEA.
  * Date：2018/4/8
@@ -47,7 +47,7 @@ public interface SelectAllMapper<T, Id extends Serializable> {
      * SQL Provider To @see com.sanmi.framework.orm.core.provider.OrmSelectAllProvider#selectAll
      *
      * @return 查询集合
-     * @throws EnhanceFrameworkException
+     * @throws EnhanceFrameworkException 增强框架异常
      */
     @SelectProvider(type = OrmSelectAllProvider.class, method = "empty")
     List<T> selectAll() throws EnhanceFrameworkException;

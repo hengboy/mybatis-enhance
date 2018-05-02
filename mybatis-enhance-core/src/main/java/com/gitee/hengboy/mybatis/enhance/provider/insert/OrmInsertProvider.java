@@ -38,7 +38,7 @@ import java.lang.reflect.Method;
  * 持久化数据Sql构建实体类
  * 提供给MyBatis :: @InsertProvider注解使用
  *
- * @author：于起宇 <br/>
+ * @author：于起宇
  * ===============================
  * Created with IDEA.
  * Date：2018/4/6
@@ -62,7 +62,6 @@ public class OrmInsertProvider extends BaseProvider {
      * 生成插入单个实体的sql
      *
      * @param statement MappedStatement实例
-     * @return
      * @see CrudMapper#insert(Object)
      */
     public void insert(MappedStatement statement) {

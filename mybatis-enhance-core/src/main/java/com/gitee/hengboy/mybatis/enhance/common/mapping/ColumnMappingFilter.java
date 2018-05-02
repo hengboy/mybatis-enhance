@@ -38,7 +38,7 @@ import java.util.List;
  * 列映射工具类
  * 获取数据实体内的列名称、列值映射列表
  *
- * @author：于起宇 <br/>
+ * @author：于起宇
  * ===============================
  * Created with IDEA.
  * Date：2018/4/12
@@ -69,7 +69,7 @@ public class ColumnMappingFilter {
     /**
      * 获取主键列结构映射对象
      *
-     * @return
+     * @return 列映射对象
      */
     public ColumnStruct getIdColumnStruct() {
         for (ColumnStruct columnStruct : mappingFilterBuilder.getColumnStructList()) {
@@ -86,7 +86,7 @@ public class ColumnMappingFilter {
      * <p>
      * 如果实体类内不设置主键生成策略，默认使用mybatis内的NoKeyGenerator
      *
-     * @return
+     * @return 主键生成策略对象
      * @see KeyGeneratorTypeEnum 根据枚举判断处理返回自定义的主键生成策略
      * @see org.apache.ibatis.executor.keygen.NoKeyGenerator
      */
@@ -135,7 +135,7 @@ public class ColumnMappingFilter {
      * 获取映射实体的列值映射
      * 如：#{bean.xxx}
      *
-     * @return
+     * @return 列值集合
      */
     public String[] getColumnValues() {
 
@@ -153,7 +153,7 @@ public class ColumnMappingFilter {
      * 判断列是否可以添加到返回的列名以及列值的数组内
      *
      * @param columnStruct 列映射结构对象
-     * @return
+     * @return true：添加到返回值列表内，false：不添加到返回值列表内
      */
     private boolean isAddToList(ColumnStruct columnStruct) {
         boolean isAddToList = false;
@@ -184,7 +184,7 @@ public class ColumnMappingFilter {
      * 1. 排除mapping = false
      *
      * @param columnStruct 列结构对象
-     * @return
+     * @return true：查询的字段添加到返回值
      */
     private boolean selectIsAddToList(ColumnStruct columnStruct) {
         return columnStruct.isMapping();
@@ -197,7 +197,7 @@ public class ColumnMappingFilter {
      * 3. 排除主键生成策略为KeyGeneratorTypeEnum.AUTO
      *
      * @param columnStruct 列结构对象
-     * @return
+     * @return true：添加字段添加到返回值集合
      */
     private boolean insertIsAddToList(ColumnStruct columnStruct) {
         if (!columnStruct.isMapping() || !columnStruct.isInsertable()) {
@@ -223,7 +223,7 @@ public class ColumnMappingFilter {
      * 3. 过滤主键，isPk = true
      *
      * @param columnStruct 列映射结构对象
-     * @return
+     * @return true：更新添加到返回值列表内
      */
     private boolean updateIsAddToList(ColumnStruct columnStruct) {
         if (!columnStruct.isMapping() || !columnStruct.isUpdateable() || columnStruct.isPk()) {
@@ -238,7 +238,7 @@ public class ColumnMappingFilter {
      * 2.过滤主键，isPk = true
      *
      * @param columnStruct 列结构对象
-     * @return
+     * @return true：删除到返回值集合内
      */
     private boolean deleteIsAddToList(ColumnStruct columnStruct) {
         if (!columnStruct.isMapping() || !columnStruct.isPk()) {

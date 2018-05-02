@@ -31,7 +31,7 @@ import java.lang.annotation.Target;
  * XxxSelect/Insert/Update/Delete Provider定义的Mapper
  * 该注解配置在接口上标识，需要使用内置的Provider处理Mapper接口内的所有方法
  *
- * @author：于起宇 <br/>
+ * @author：于起宇
  * ===============================
  * Created with IDEA.
  * Date：2018/4/7

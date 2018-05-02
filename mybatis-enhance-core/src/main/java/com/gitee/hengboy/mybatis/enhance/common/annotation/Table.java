@@ -43,7 +43,7 @@ public @interface Table {
 
 	/**
 	 * 配置表名信息
-	 * @return
+	 * @return 表名
 	 */
 	String name();
 

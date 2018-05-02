@@ -32,7 +32,7 @@ import java.io.Serializable;
 import java.util.Collection;
 
 /**
- * @author：于起宇 <br/>
+ * @author：于起宇
  * ===============================
  * Created with IDEA.
  * Date：2018/4/8
@@ -46,8 +46,8 @@ public interface DeleteCollectionMapper<T, Id extends Serializable> {
     /**
      * 根据主键值集合删除多条记录
      *
-     * @param collection
-     * @throws EnhanceFrameworkException
+     * @param collection 删除的主键集合
+     * @throws EnhanceFrameworkException 增强框架异常
      */
     @DeleteProvider(type = OrmDeleteCollectionProvider.class, method = "empty")
     void deleteCollection(@Param("collection") Collection<Id> collection) throws EnhanceFrameworkException;

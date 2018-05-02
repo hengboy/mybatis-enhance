@@ -25,10 +25,10 @@ package com.gitee.hengboy.mybatis.enhance.common.enums;
 /**
  * 自动生成主键枚举
  * 类型解释：
- * AUTO=>自动生成，构建insert column时排除，针对mysql数据库
- * SNOWFLAKE=>采用Twitter分布式生成ID机制
- * UUID=>采用UUID形式生成
- * DIY=>用户自定义
+ * AUTO -- 自动生成，构建insert column时排除，针对mysql数据库
+ * SNOWFLAKE -- 采用Twitter分布式生成ID机制
+ * UUID -- 采用UUID形式生成
+ * DIY -- 用户自定义
  * ===============================
  * Created with IntelliJ IDEA.
  * User：于起宇

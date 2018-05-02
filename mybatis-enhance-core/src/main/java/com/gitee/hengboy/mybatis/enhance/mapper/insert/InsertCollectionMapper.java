@@ -32,7 +32,7 @@ import java.io.Serializable;
 import java.util.Collection;
 
 /**
- * @author：于起宇 <br/>
+ * @author：于起宇
  * ===============================
  * Created with IDEA.
  * Date：2018/4/8
@@ -46,7 +46,7 @@ public interface InsertCollectionMapper<T, Id extends Serializable> {
      * 添加多条数据
      *
      * @param collection 持久化对象实例集合
-     * @throws EnhanceFrameworkException
+     * @throws EnhanceFrameworkException 增强框架异常
      */
     @InsertProvider(type = OrmInsertCollectionProvider.class, method = "empty")
     void insertCollection(@Param("collection") Collection<T> collection) throws EnhanceFrameworkException;

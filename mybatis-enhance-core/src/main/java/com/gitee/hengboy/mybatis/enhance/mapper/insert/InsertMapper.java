@@ -31,7 +31,7 @@ import org.apache.ibatis.annotations.Param;
 import java.io.Serializable;
 
 /**
- * @author：于起宇 <br/>
+ * @author：于起宇
  * ===============================
  * Created with IDEA.
  * Date：2018/4/8
@@ -50,7 +50,7 @@ public interface InsertMapper<T, Id extends Serializable>
      * SQL Provider To @see com.sanmi.framework.orm.core.provider.OrmInsertProvider#insert
      *
      * @param t 将要持久化的对象实例
-     * @throws EnhanceFrameworkException 抛出框架异常
+     * @throws EnhanceFrameworkException 增强框架异常 抛出框架异常
      */
     @InsertProvider(type = OrmInsertProvider.class, method = "empty")
     void insert(@Param("bean") T t) throws EnhanceFrameworkException;

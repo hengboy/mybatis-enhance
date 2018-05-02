@@ -35,7 +35,7 @@ import java.util.Map;
 /**
  * 动态查询Mapper方法提供数据接口
  *
- * @author：于起宇 <br/>
+ * @author：于起宇
  * ===============================
  * Created with IDEA.
  * Date：2018/4/18
@@ -50,8 +50,8 @@ public interface SelectDslMapper<T, Id extends Serializable> {
      *
      * @param sql    查询的sql
      * @param params 查询的参数
-     * @return
-     * @throws EnhanceFrameworkException
+     * @return 查询的Map集合
+     * @throws EnhanceFrameworkException 增强框架异常
      */
     @SelectProvider(type = OrmSelectDslProvider.class, method = "empty")
     List<Map> selectBySql(@Param("sql") String sql, @Param("param") Map<String, Object> params) throws EnhanceFrameworkException;

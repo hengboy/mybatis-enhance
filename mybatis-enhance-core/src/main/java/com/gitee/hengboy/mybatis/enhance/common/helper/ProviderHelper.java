@@ -1,18 +1,18 @@
 /**
  * The MIT License (MIT)
- *
+ * <p>
  * Copyright (c) 2018 恒宇少年
- *
+ * <p>
  * Permission is hereby granted, free of charge, to any person obtaining a copy of
  * this software and associated documentation files (the "Software"), to deal in
  * the Software without restriction, including without limitation the rights to
  * use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of
  * the Software, and to permit persons to whom the Software is furnished to do so,
  * subject to the following conditions:
- *
+ * <p>
  * The above copyright notice and this permission notice shall be included in all
  * copies or substantial portions of the Software.
- *
+ * <p>
  * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
  * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS
  * FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR
@@ -41,7 +41,7 @@ import java.lang.reflect.Method;
 /**
  * Provider工具类
  *
- * @author：于起宇 <br/>
+ * @author：于起宇
  * ===============================
  * Created with IDEA.
  * Date：2018/4/8
@@ -59,8 +59,8 @@ public class ProviderHelper {
      * 根据Method反射方法对象获取该方法上配置的Provider注解并且实例化该Provider返回
      *
      * @param statementId MapperStatement的id值
-     * @return
-     * @throws EnhanceFrameworkException
+     * @return 获取Method配置的XxxProvider对象
+     * @throws EnhanceFrameworkException 增强框架异常
      */
     public static BaseProvider getMethodProvider(String statementId) throws EnhanceFrameworkException {
         // 获取statementId对应的方法名称
@@ -97,7 +97,7 @@ public class ProviderHelper {
      * 查找Method对应配置的@SelectProvider/@UpdateProvider等内的type类型全限定名
      *
      * @param method Method反射实例
-     * @return
+     * @return 获取XxxProvider的类型
      */
     public static Class<?> findProviderClass(Method method) {
         Class<?> providerClass = null;
@@ -129,7 +129,7 @@ public class ProviderHelper {
      * 获取不同的Provider
      *
      * @param methodName 方法名称
-     * @return
+     * @return 获取命名规则的XxxProvider类型
      */
     public static Class<?> findNamedProvider(String methodName) {
         // 方法规则 - findByXxx

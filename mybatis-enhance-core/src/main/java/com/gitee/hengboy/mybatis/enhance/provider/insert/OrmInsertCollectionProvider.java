@@ -37,7 +37,7 @@ import java.lang.reflect.Method;
 import java.util.Collection;
 
 /**
- * @author：于起宇 <br/>
+ * @author：于起宇
  * ===============================
  * Created with IDEA.
  * Date：2018/4/12
@@ -61,7 +61,6 @@ public class OrmInsertCollectionProvider extends BaseProvider {
      * 通过Collection形式插入多条数据
      *
      * @param statement MappedStatement对象
-     * @return
      * @see CrudMapper#insertCollection(Collection)
      */
     public void insertCollection(MappedStatement statement) {

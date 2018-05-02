@@ -30,7 +30,7 @@ import org.apache.ibatis.annotations.DeleteProvider;
 import java.io.Serializable;
 
 /**
- * @author：于起宇 <br/>
+ * @author：于起宇
  * ===============================
  * Created with IDEA.
  * Date：2018/4/23
@@ -43,7 +43,7 @@ public interface DeleteAllMapper<T, Id extends Serializable> {
     /**
      * 删除全部方法
      *
-     * @throws EnhanceFrameworkException
+     * @throws EnhanceFrameworkException 增强框架异常
      */
     @DeleteProvider(type = DeleteAllProvider.class, method = "empty")
     void deleteAll() throws EnhanceFrameworkException;

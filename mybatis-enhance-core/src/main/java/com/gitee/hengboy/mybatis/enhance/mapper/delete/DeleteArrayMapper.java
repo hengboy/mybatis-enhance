@@ -31,7 +31,7 @@ import org.apache.ibatis.annotations.Param;
 import java.io.Serializable;
 
 /**
- * @author：于起宇 <br/>
+ * @author：于起宇
  * ===============================
  * Created with IDEA.
  * Date：2018/4/8
@@ -46,7 +46,7 @@ public interface DeleteArrayMapper<T, Id extends Serializable> {
      * 根据数组的形式删除
      *
      * @param ids 编号数组
-     * @throws EnhanceFrameworkException
+     * @throws EnhanceFrameworkException 增强框架异常
      */
     @DeleteProvider(type = OrmDeleteArrayProvider.class, method = "empty")
     void deleteArray(@Param("array") Id... ids) throws EnhanceFrameworkException;

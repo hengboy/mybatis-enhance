@@ -28,7 +28,7 @@ import com.gitee.hengboy.mybatis.enhance.common.annotation.ProviderMapper;
 import java.io.Serializable;
 
 /**
- * @author：于起宇 <br/>
+ * @author：于起宇
  * ===============================
  * Created with IDEA.
  * Date：2018/4/6

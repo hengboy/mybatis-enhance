@@ -39,7 +39,7 @@ public class NameDefineHelper {
      * 驼峰下划线方式生成语法规法
      *
      * @param param 需要驼峰格式化的字符串
-     * @return
+     * @return 格式化后的驼峰命名
      */
     public static String camelToUnderline(String param) {
         if (param == null || "".equals(param.trim())) {

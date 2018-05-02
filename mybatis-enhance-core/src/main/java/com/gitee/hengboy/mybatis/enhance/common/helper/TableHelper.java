@@ -37,7 +37,7 @@ import java.util.List;
 /**
  * 数据库表、列信息工具类
  *
- * @author：于起宇 <br/>
+ * @author：于起宇
  * ===============================
  * Created with IDEA.
  * Date：2018/4/7
@@ -64,7 +64,7 @@ public final class TableHelper {
      *
      * @param entityClass Mapper类型名称
      * @return 表结构映射工具类
-     * @throws EnhanceFrameworkException
+     * @throws EnhanceFrameworkException 增强框架异常
      */
     public static TableStruct getTableStruct(Class<?> entityClass) throws EnhanceFrameworkException {
         // 从缓存内获取TableStruct
@@ -84,8 +84,8 @@ public final class TableHelper {
      * 根据数据库表名称获取表内所有的列映射结构信息
      *
      * @param entityClass 实体类型
-     * @return
-     * @throws EnhanceFrameworkException
+     * @return 实体类内的所有列映射集合
+     * @throws EnhanceFrameworkException 增强框架异常
      */
     public static List<ColumnStruct> getColumnStruct(Class<?> entityClass) throws EnhanceFrameworkException {
         // 获取实体对应的列信息
@@ -106,8 +106,8 @@ public final class TableHelper {
      * 加载数据表的缓存结构信息
      *
      * @param entityClass 实体类型
-     * @return
-     * @throws EnhanceFrameworkException
+     * @return 表格映射对象
+     * @throws EnhanceFrameworkException 增强框架异常
      */
     static TableStruct loadTableStruct(Class<?> entityClass) throws EnhanceFrameworkException {
 
@@ -128,7 +128,7 @@ public final class TableHelper {
      * 如果存在@Table注解，使用该注解的name属性作为表名
      *
      * @param entityClass 数据实体类类型
-     * @return
+     * @return 表名
      */
     public static String getTableName(Class<?> entityClass) {
         //非空处理

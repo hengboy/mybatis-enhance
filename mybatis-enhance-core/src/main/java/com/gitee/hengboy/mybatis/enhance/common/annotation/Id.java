@@ -49,7 +49,7 @@ public @interface Id {
     /**
      * 主键生成类型
      *
-     * @return
+     * @return 主键生成策略
      */
     KeyGeneratorTypeEnum generatorType() default KeyGeneratorTypeEnum.AUTO;
 }
