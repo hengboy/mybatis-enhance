@@ -32,7 +32,7 @@ import java.io.Serializable;
 import java.util.List;
 
 /**
- * @author：于起宇 <br/>
+ * @author：于起宇
  * ===============================
  * Created with IDEA.
  * Date：2018/4/14
@@ -46,8 +46,8 @@ public interface SelectArrayMapper<T, Id extends Serializable> {
      * 根据主键的集合查询
      *
      * @param ids 主键编号集合
-     * @return
-     * @throws EnhanceFrameworkException
+     * @return T类型的集合
+     * @throws EnhanceFrameworkException 增强框架异常
      */
     @SelectProvider(type = OrmSelectArrayProvider.class, method = "empty")
     List<T> selectArray(@Param("array") Id... ids) throws EnhanceFrameworkException;

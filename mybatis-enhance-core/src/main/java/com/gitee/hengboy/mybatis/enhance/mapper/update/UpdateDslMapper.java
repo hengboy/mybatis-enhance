@@ -34,7 +34,7 @@ import java.util.Map;
 /**
  * 动态更新数据接口
  *
- * @author：于起宇 <br/>
+ * @author：于起宇
  * ===============================
  * Created with IDEA.
  * Date：2018/4/18
@@ -49,7 +49,7 @@ public interface UpdateDslMapper<T, Id extends Serializable> {
      *
      * @param sql    更新sql语句
      * @param params 更新所需的参数列表
-     * @throws EnhanceFrameworkException
+     * @throws EnhanceFrameworkException 增强框架异常
      */
     @UpdateProvider(type = OrmUpdateDslProvider.class, method = "empty")
     void updateBySql(@Param("sql") String sql, @Param("param") Map<String, Object> params) throws EnhanceFrameworkException;

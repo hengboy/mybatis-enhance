@@ -29,7 +29,7 @@ import java.util.List;
 /**
  * 分页查询返回的对象类型
  *
- * @author：于起宇 <br/>
+ * @author：于起宇
  * ===============================
  * Created with IDEA.
  * Date：2018/4/17

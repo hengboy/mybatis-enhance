@@ -33,7 +33,7 @@ import java.io.Serializable;
 import java.util.List;
 
 /**
- * @author：于起宇 <br/>
+ * @author：于起宇
  * ===============================
  * Created with IDEA.
  * Date：2018/4/8
@@ -48,8 +48,8 @@ public interface PageableMapper<T, Id extends Serializable> {
      * 分页查询
      *
      * @param pageable 分页对象
-     * @return
-     * @throws EnhanceFrameworkException
+     * @return T类型的集合
+     * @throws EnhanceFrameworkException 增强框架异常
      */
     @SelectProvider(type = OrmSelectPageableProvider.class, method = "empty")
     List<T> selectByPageable(@Param("pageable") Pageable pageable) throws EnhanceFrameworkException;

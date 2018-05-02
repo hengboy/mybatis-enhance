@@ -58,7 +58,7 @@ public class ColumnHelper {
      * 获取列名
      *
      * @param field 字段对象
-     * @return
+     * @return 获取列名
      */
     public static String getColumnName(Field field) {
         /**
@@ -96,7 +96,7 @@ public class ColumnHelper {
      * 获取主键生成枚举类型
      *
      * @param field 字段
-     * @return
+     * @return 获取主键生成策略
      */
     public static KeyGeneratorTypeEnum getGeneratorType(Field field) {
         if (getIsPk(field)) {
@@ -110,7 +110,7 @@ public class ColumnHelper {
      * 获取配置的是否映射
      *
      * @param field 字段对象
-     * @return
+     * @return true：字段参与映射
      */
     public static boolean getMapping(Field field) {
         /**
@@ -123,8 +123,8 @@ public class ColumnHelper {
     /**
      * 验证是否insertable
      *
-     * @param field
-     * @return
+     * @param field 字段对象
+     * @return true：获取参与插入映射
      */
     public static boolean getInsertable(Field field) {
         /**
@@ -137,8 +137,8 @@ public class ColumnHelper {
     /**
      * 验证是否updateable
      *
-     * @param field
-     * @return
+     * @param field 字段对象
+     * @return true：参与更新映射
      */
     public static boolean getUpdateable(Field field) {
         /**
@@ -151,8 +151,8 @@ public class ColumnHelper {
     /**
      * 获取columnStruct映射信息
      *
-     * @param field 字段
-     * @return
+     * @param field 字段对象
+     * @return true：获取列映射对象
      */
     public static ColumnStruct getStruct(Field field) {
         /**
@@ -175,7 +175,7 @@ public class ColumnHelper {
      * 从实体类中获取ColumnStruct集合
      *
      * @param entityClass 实体类型
-     * @return
+     * @return 获取表内的列映射集合
      */
     static List<ColumnStruct> loadColumnStruct(TableStruct tableStruct, Class<?> entityClass) {
         List<ColumnStruct> structs = new ArrayList();

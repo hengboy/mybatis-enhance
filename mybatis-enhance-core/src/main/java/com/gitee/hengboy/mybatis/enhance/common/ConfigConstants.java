@@ -25,7 +25,7 @@ package com.gitee.hengboy.mybatis.enhance.common;
 /**
  * 持久化框架配置常量设置
  *
- * @author：于起宇 <br/>
+ * @author：于起宇
  * ===============================
  * Created with IDEA.
  * Date：2018/4/12

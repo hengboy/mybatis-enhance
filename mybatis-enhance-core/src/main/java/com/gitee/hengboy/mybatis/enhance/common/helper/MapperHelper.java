@@ -33,7 +33,7 @@ import java.lang.reflect.Method;
 /**
  * Mapper接口工具类
  *
- * @author：于起宇 <br/>
+ * @author：于起宇
  * ===============================
  * Created with IDEA.
  * Date：2018/4/7
@@ -52,7 +52,7 @@ public final class MapperHelper {
      *
      * @param methodName  方法名称
      * @param mapperClass Mapper类型
-     * @return
+     * @return 获取方法对象
      */
     public static Method getMethod(String methodName, Class<?> mapperClass) {
         if (StringUtils.isEmpty(methodName) || ObjectUtils.isEmpty(mapperClass)) {

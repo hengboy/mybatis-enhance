@@ -34,7 +34,7 @@ import java.lang.reflect.Type;
 /**
  * 实体类工具类
  *
- * @author：于起宇 <br/>
+ * @author：于起宇
  * ===============================
  * Created with IDEA.
  * Date：2018/4/8
@@ -55,7 +55,7 @@ public class EntityHelper {
      * 根据Mapper实例对象提取泛型实体类型
      *
      * @param mapperClass Mapper实例对象类型
-     * @return
+     * @return 实体的类型
      */
     public static Class<?> getEntityClass(Class<?> mapperClass) {
         // 从缓存内获取实体的类型
@@ -82,7 +82,7 @@ public class EntityHelper {
      * 从Mapper泛型参数获取实体的类型并写入缓存内
      *
      * @param mapperClass Mapper类型
-     * @return
+     * @return Mapper类型
      */
     private static Class<?> getMapperEntityClass(Class<?> mapperClass) {
         Type[] types = mapperClass.getGenericInterfaces();

@@ -36,7 +36,7 @@ import java.util.List;
 /**
  * Mapper接口工具类
  *
- * @author：于起宇 <br/>
+ * @author：于起宇
  * ===============================
  * Created with IDEA.
  * Date：2018/4/7
@@ -77,7 +77,7 @@ public final class StatementHelper {
      * 根据MappedStatementId获取方法的名称
      *
      * @param msId MappedStatementId
-     * @return
+     * @return 获取方法的名称
      */
     public static String getMethodName(String msId) {
         if (msId.indexOf(SPLIT) == -1) {
@@ -91,7 +91,7 @@ public final class StatementHelper {
      * 如：userMapper.insert，可以获取到userMapper对应的Class类型
      *
      * @param msId MappedStatement的Id
-     * @return
+     * @return 获取Mapper的类型
      */
     public static Class<?> getMapperClass(String msId) {
         if (msId.indexOf(SPLIT) == -1) {
@@ -127,7 +127,7 @@ public final class StatementHelper {
     /**
      * 获取当前线程的ClassLoader
      *
-     * @return
+     * @return 获取当前线程的ClassLoader对象集合
      */
     private static ClassLoader[] getClassLoaders() {
         return new ClassLoader[]{Thread.currentThread().getContextClassLoader(), StatementHelper.class.getClassLoader()};

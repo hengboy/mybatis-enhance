@@ -25,7 +25,7 @@ package com.gitee.hengboy.mybatis.enhance.common.mapping;
 /**
  * 映射类型枚举定义
  *
- * @author：于起宇 <br/>
+ * @author：于起宇
  * ===============================
  * Created with IDEA.
  * Date：2018/4/13

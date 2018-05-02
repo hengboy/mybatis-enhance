@@ -33,7 +33,7 @@ import java.io.Serializable;
 /**
  * 更新数据接口
  *
- * @author：于起宇 <br/>
+ * @author：于起宇
  * ===============================
  * Created with IDEA.
  * Date：2018/4/8
@@ -49,7 +49,7 @@ public interface UpdateMapper<T, Id extends Serializable>
      * 更新单条对象实例
      *
      * @param t 对象实例
-     * @throws EnhanceFrameworkException
+     * @throws EnhanceFrameworkException 增强框架异常
      */
     @UpdateProvider(type = OrmUpdateProvider.class, method = "empty")
     void update(@Param("bean") T t) throws EnhanceFrameworkException;

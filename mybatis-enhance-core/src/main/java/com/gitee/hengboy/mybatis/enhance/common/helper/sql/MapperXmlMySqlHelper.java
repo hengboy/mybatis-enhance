@@ -1,18 +1,18 @@
 /**
  * The MIT License (MIT)
- *
+ * <p>
  * Copyright (c) 2018 恒宇少年
- *
+ * <p>
  * Permission is hereby granted, free of charge, to any person obtaining a copy of
  * this software and associated documentation files (the "Software"), to deal in
  * the Software without restriction, including without limitation the rights to
  * use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of
  * the Software, and to permit persons to whom the Software is furnished to do so,
  * subject to the following conditions:
- *
+ * <p>
  * The above copyright notice and this permission notice shall be included in all
  * copies or substantial portions of the Software.
- *
+ * <p>
  * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
  * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS
  * FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR
@@ -38,8 +38,7 @@ import java.util.Map;
 /**
  * 提供Mybatis Xml形式构建Mapper内sql的工具类
  *
- * @author：于起宇 <br/>
- * ===============================
+ * @author：于起宇 ===============================
  * Created with IDEA.
  * Date：2018/4/14
  * Time：下午4:15
@@ -49,11 +48,12 @@ import java.util.Map;
 public class MapperXmlMySqlHelper {
 
     /**
-     * 处理MyBatis的xml形式sql必须使用<script>开头以及</script>结尾
+     * 处理MyBatis的xml形式sql必须使用script开头以及script结尾
      *
-     * @param expression 表达式内容
-     * @return
-     * @throws EnhanceFrameworkException
+     * @param expression  表达式内容
+     * @param expressions 表达式集合
+     * @return 获取xml方式的sql开始
+     * @throws EnhanceFrameworkException 增强框架异常
      */
     public static String script(String expression, String... expressions) throws EnhanceFrameworkException {
         if (StringUtils.isEmpty(expression)) {
@@ -78,8 +78,8 @@ public class MapperXmlMySqlHelper {
      *
      * @param methodName     方法名称
      * @param columnMappings 列映射集合
-     * @return
-     * @throws EnhanceFrameworkException
+     * @return 格式化命名规则查询的sql
+     * @throws EnhanceFrameworkException 增强框架异常
      */
     public static String named(String methodName, Map<String, ColumnStruct> columnMappings) throws EnhanceFrameworkException {
         StringBuffer buffer = new StringBuffer();
@@ -111,8 +111,8 @@ public class MapperXmlMySqlHelper {
      * 生成update xx
      *
      * @param tableName 表名
-     * @return
-     * @throws EnhanceFrameworkException
+     * @return 格式化更新后的sql
+     * @throws EnhanceFrameworkException 增强框架异常
      */
     public static String update(String tableName) throws EnhanceFrameworkException {
         if (StringUtils.isEmpty(tableName)) {
@@ -128,8 +128,8 @@ public class MapperXmlMySqlHelper {
      * 生成delete from标签的xml字符串
      *
      * @param tableName 表名
-     * @return
-     * @throws EnhanceFrameworkException
+     * @return 格式化删除后的sql
+     * @throws EnhanceFrameworkException 增强框架异常
      */
     public static String delete(String tableName) throws EnhanceFrameworkException {
         if (StringUtils.isEmpty(tableName)) {
@@ -143,8 +143,8 @@ public class MapperXmlMySqlHelper {
      *
      * @param tableName 表名
      * @param columns   列名数组
-     * @return
-     * @throws EnhanceFrameworkException
+     * @return 格式化查询sql
+     * @throws EnhanceFrameworkException 增强框架异常
      */
     public static String select(String tableName, String[] columns) throws EnhanceFrameworkException {
         if (StringUtils.isEmpty(tableName)) {
@@ -159,13 +159,12 @@ public class MapperXmlMySqlHelper {
 
     /**
      * 生成set标签xml字符串
-     * <set>
-     * xxxx = #{xxx}
-     * </set>
+     * set xxxx = #{xxx}
+     *
      *
      * @param expressions 表达式数组集合
-     * @return
-     * @throws EnhanceFrameworkException
+     * @return 格式化set sql
+     * @throws EnhanceFrameworkException 增强框架异常
      */
     public static String set(String... expressions) throws EnhanceFrameworkException {
         if (ObjectUtils.isEmpty(expressions)) {
@@ -185,16 +184,11 @@ public class MapperXmlMySqlHelper {
     /**
      * 生成where标签xml字符串
      * 传递多个表达式
-     * <where>
-     * <if test="xxx!=null">
-     * xxxxxxx
-     * </if>
-     * </where>
      *
      * @param expression  表达式
      * @param expressions 表达式可变数组参数
-     * @return
-     * @throws EnhanceFrameworkException
+     * @return 格式化where sql
+     * @throws EnhanceFrameworkException 增强框架异常
      */
     public static String where(String expression, String... expressions) throws EnhanceFrameworkException {
         if (StringUtils.isEmpty(expression) && ObjectUtils.isEmpty(expressions)) {
@@ -217,15 +211,12 @@ public class MapperXmlMySqlHelper {
 
     /**
      * if表达式
-     * <if test="xxx!=null">
-     * contents
-     * </if>
      *
      * @param paramName   参数名称
      * @param expression  表达式
      * @param expressions 表达式数据
-     * @return
-     * @throws EnhanceFrameworkException
+     * @return 格式化判断非空sql
+     * @throws EnhanceFrameworkException 增强框架异常
      */
     public static String ifNotNull(String paramName, String expression, String... expressions) throws EnhanceFrameworkException {
         if (StringUtils.isEmpty(expression) && ObjectUtils.isEmpty(expressions)) {
@@ -253,8 +244,8 @@ public class MapperXmlMySqlHelper {
      * @param columnName 列名
      * @param collection 集合名词
      * @param item       每一个项的名称
-     * @return
-     * @throws EnhanceFrameworkException
+     * @return 格式化in sql
+     * @throws EnhanceFrameworkException 增强框架异常
      */
     public static String in(String columnName, String collection, String item) throws EnhanceFrameworkException {
         if (StringUtils.isEmpty(columnName)) {
@@ -275,16 +266,13 @@ public class MapperXmlMySqlHelper {
 
     /**
      * 生成foreach标签xml字符串
-     * <foreach collection="" item="" open="" close="" separator="">
-     *
-     * </foreach>
      *
      * @param collection 遍历集合的名称
      * @param item       每一个项的名称
      * @param open       开始字符串
      * @param close      结束字符串
      * @param separator  每一个项的分隔符
-     * @return
+     * @return 格式化foreach xml sql
      */
     public static String foreach(String collection, String item, String open, String close, String separator) throws EnhanceFrameworkException {
         if (StringUtils.isEmpty(collection) || StringUtils.isEmpty(item) || StringUtils.isEmpty(separator)) {
@@ -319,8 +307,8 @@ public class MapperXmlMySqlHelper {
      * 生成分页查询SQL
      * 如：limit 20,10 或 limit 10
      *
-     * @return
-     * @throws EnhanceFrameworkException
+     * @return 格式化分页sql
+     * @throws EnhanceFrameworkException 增强框架异常
      */
     public static String pageable() throws EnhanceFrameworkException {
         StringBuffer buffer = new StringBuffer();
@@ -337,8 +325,8 @@ public class MapperXmlMySqlHelper {
      * 生成分页对象内的排序SQL
      * 如：order by ${pageable.sort.sorter}
      *
-     * @return
-     * @throws EnhanceFrameworkException
+     * @return 格式化排序sql
+     * @throws EnhanceFrameworkException 增强框架异常
      */
     public static String sort() throws EnhanceFrameworkException {
         StringBuffer buffer = new StringBuffer();
@@ -352,8 +340,8 @@ public class MapperXmlMySqlHelper {
      *
      * @param tableName  表名
      * @param columnName 统计列的名称
-     * @return
-     * @throws EnhanceFrameworkException
+     * @return 格式化统计sql
+     * @throws EnhanceFrameworkException 增强框架异常
      */
     public static String count(String tableName, String columnName) throws EnhanceFrameworkException {
         if (StringUtils.isEmpty(tableName) || StringUtils.isEmpty(columnName)) {

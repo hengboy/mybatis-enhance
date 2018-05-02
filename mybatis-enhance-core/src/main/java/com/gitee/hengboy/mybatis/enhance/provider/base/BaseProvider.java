@@ -1,18 +1,18 @@
 /**
  * The MIT License (MIT)
- *
+ * <p>
  * Copyright (c) 2018 恒宇少年
- *
+ * <p>
  * Permission is hereby granted, free of charge, to any person obtaining a copy of
  * this software and associated documentation files (the "Software"), to deal in
  * the Software without restriction, including without limitation the rights to
  * use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of
  * the Software, and to permit persons to whom the Software is furnished to do so,
  * subject to the following conditions:
- *
+ * <p>
  * The above copyright notice and this permission notice shall be included in all
  * copies or substantial portions of the Software.
- *
+ * <p>
  * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
  * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS
  * FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR
@@ -48,8 +48,7 @@ import java.util.concurrent.ConcurrentHashMap;
  * 提供者Provider的基础类型
  * 提供了操作实体的类型以及接口的类型
  *
- * @author：于起宇 <br/>
- * ===============================
+ * @author：于起宇 ===============================
  * Created with IDEA.
  * Date：2018/4/8
  * Time：上午11:14
@@ -120,7 +119,7 @@ public class BaseProvider {
      * 实体类型参数：@Param("bean") T t，对应SQL格式：#{bean.xxx_id}、
      * 主键类型参数：@Param("id") Id id，对应SQL格式：{#id}
      *
-     * @return
+     * @return 默认的sql字符串
      */
     public String empty() {
         return "this is empty sql";
@@ -130,8 +129,7 @@ public class BaseProvider {
      * 执行创建Sql的具体方法
      * 如：OrmSelectAllProvider::selectOne(MappedStatement ms)
      *
-     * @param ms
-     * @throws Exception
+     * @param ms MappedStatement对象实例
      */
     public void invokeProviderMethod(MappedStatement ms) {
         // 调用Provider对应的方法并返回Sql
@@ -168,7 +166,7 @@ public class BaseProvider {
 
     /**
      * 重新装载MappedStatement的SqlSource内容
-     * sql字符串如果以<script></script>开头，那么表示内容是mybatis可以识别的xml方式字符串
+     * sql字符串如果以script开头，那么表示内容是mybatis可以识别的xml方式字符串
      *
      * @param statement MappedStatement实例
      * @param sql       构建mybatis可以识别的sql（普通sql、xml方式sql）
@@ -233,7 +231,10 @@ public class BaseProvider {
      * 设置实体内主键的列名到MappedStatement内的keyColumns
      * 设置主键生成策略到MappedStatement内的keyGenerator
      *
-     * @param statement MappedStatement实例对象
+     * @param statement     MappedStatement实例对象
+     * @param keyColumnName 主键列名
+     * @param keyFieldName  主键对应的Field名称
+     * @param keyGenerator  生成策略
      * @see org.apache.ibatis.executor.keygen.NoKeyGenerator
      */
     protected void reloadKeyGenerator(MappedStatement statement, KeyGenerator keyGenerator, String keyFieldName, String keyColumnName) {
@@ -278,9 +279,9 @@ public class BaseProvider {
     }
 
     /**
-     * 将List<ColumnStruct>转换为Map<String,ColumnStruct>
+     * 将ColumnStruct集合转换为Map类型的ColumnStruct
      *
-     * @return¬
+     * @return 返回的Map集合的ColumnStruct
      */
     protected Map<String, ColumnStruct> getColumnStructMap() {
         // 初始化ColumnStructMap集合

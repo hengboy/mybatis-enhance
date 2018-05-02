@@ -26,7 +26,7 @@ import org.springframework.util.ObjectUtils;
 
 /**
  * 字符串处理工具类
- * @author：于起宇 <br/>
+ * @author：于起宇
  * ===============================
  * Created with IDEA.
  * Date：2018/4/12
@@ -40,7 +40,7 @@ public class StringHelper {
      *
      * @param split 分隔符
      * @param array 字符串数组
-     * @return
+     * @return 连接后的字符串
      */
     public static String contact(String split, String[] array) {
         if (ObjectUtils.isEmpty(array)) {

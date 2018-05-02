@@ -35,7 +35,7 @@ import java.lang.reflect.Method;
  * 删除语句自动生成sql提供类
  * 提供给MyBatis :: @DeleteProvider注解使用
  *
- * @author：于起宇 <br/>
+ * @author：于起宇
  * ===============================
  * Created with IDEA.
  * Date：2018/4/7
@@ -58,8 +58,7 @@ public class OrmDeleteProvider extends BaseProvider {
     /**
      * 生成根据主键删除的sql语句
      * 示例：userMapper.deleteOne(7);
-     *
-     * @return
+     * @param statement MappedStatement对象实例
      * @see CrudMapper#deleteOne(Serializable)
      */
     public void deleteOne(MappedStatement statement) {

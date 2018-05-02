@@ -33,7 +33,7 @@ import java.util.List;
 /**
  * ColumnMappingFilter类的构建类
  *
- * @author：于起宇 <br/>
+ * @author：于起宇
  * ===============================
  * Created with IDEA.
  * Date：2018/4/13
@@ -56,7 +56,7 @@ public class ColumnMappingFilterBuilder {
     /**
      * 过滤方法，实例化ColumnMappingFilter对象实例
      *
-     * @return
+     * @return 列映射过滤对象
      */
     public ColumnMappingFilter filter() {
         // 检查参数有效性

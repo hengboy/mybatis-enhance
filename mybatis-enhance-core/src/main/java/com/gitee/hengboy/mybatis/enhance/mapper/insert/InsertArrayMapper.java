@@ -31,7 +31,7 @@ import org.apache.ibatis.annotations.Param;
 import java.io.Serializable;
 
 /**
- * @author：于起宇 <br/>
+ * @author：于起宇
  * ===============================
  * Created with IDEA.
  * Date：2018/4/8
@@ -45,7 +45,7 @@ public interface InsertArrayMapper<T, Id extends Serializable> {
      * 添加多条数据
      *
      * @param array 数组形式添加
-     * @throws EnhanceFrameworkException
+     * @throws EnhanceFrameworkException 增强框架异常
      */
     @InsertProvider(type = OrmInsertArrayProvider.class, method = "empty")
     void insertArray(@Param("array") T... array) throws EnhanceFrameworkException;

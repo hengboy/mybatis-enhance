@@ -35,7 +35,7 @@ import java.lang.reflect.Method;
 /**
  * 分页查询SQL提供者实体类
  *
- * @author：于起宇 <br/>
+ * @author：于起宇
  * ===============================
  * Created with IDEA.
  * Date：2018/4/12

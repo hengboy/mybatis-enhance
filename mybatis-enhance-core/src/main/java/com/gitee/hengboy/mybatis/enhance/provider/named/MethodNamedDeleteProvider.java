@@ -32,7 +32,7 @@ import java.lang.reflect.Method;
 /**
  * 方法规则查询Provider
  *
- * @author：于起宇 <br/>
+ * @author：于起宇
  * ===============================
  * Created with IDEA.
  * Date：2018/4/17
@@ -46,6 +46,7 @@ public class MethodNamedDeleteProvider extends BaseProvider {
      *
      * @param mapperClass Mapper类型
      * @param entityClass 实体类类型
+     * @param method 方法对象
      */
     public MethodNamedDeleteProvider(Class<?> mapperClass, Class<?> entityClass, Method method) {
         super(mapperClass, entityClass, method);

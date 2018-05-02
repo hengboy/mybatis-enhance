@@ -143,15 +143,14 @@ public final class NamedMethodHelper {
 
     /**
      * 构造方法名称规则条件sql语句
-     * 如：findAllByNameAndAge(String name,Integer age) ->
+     * 如：findAllByNameAndAge(String name,Integer age)
      * where u_name = #{name} and u_age = #{age}
-     * <p>
      * - 处理or拼接条件
      * - 处理or内每个元素的and拼接条件
      *
      * @param methodName 名称规则对应的方法名称
      * @param mappings   操作实体类字段与列映射集合
-     * @return
+     * @return 格式化后OrPart对象集合
      */
     public static List<OrPart> getNamedWhereSql(String methodName, Map<String, ColumnStruct> mappings) {
         // or sql 语句集合，每一个 or 内的所有and作为list内的一个项
