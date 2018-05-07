@@ -8,13 +8,9 @@
         <version>1.0.0</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
-
     <artifactId>mybatis-enhance-spring-boot-autoconfigure</artifactId>
-
-    <properties>
-        <!--orm依赖版本-->
-        <mybatis.enhance.version>1.0.0</mybatis.enhance.version>
-    </properties>
+    <version>1.0.1</version>
+    <description>MyBatis Enhance SpringBoot Starter AutoConfigure</description>
     <dependencies>
         <!--SpringBoot自定义自动化配置依赖-->
         <dependency>
@@ -36,4 +32,5 @@
             <version>${mybatis.enhance.version}</version>
         </dependency>
     </dependencies>
+
 </project>

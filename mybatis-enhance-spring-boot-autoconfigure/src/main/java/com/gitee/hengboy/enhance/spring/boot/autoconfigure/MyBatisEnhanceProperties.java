@@ -40,7 +40,7 @@ import java.util.Properties;
  * 三米持久化框架属性配置类
  * 该类的源码内容继承自Mybatis-spring-boot-starter内的MyBatisProperties
  *
- * @author：于起宇 <br/>
+ * @author：于起宇
  * ===============================
  * Created with IDEA.
  * Date：2018/4/6
