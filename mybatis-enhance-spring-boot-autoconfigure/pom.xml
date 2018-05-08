@@ -13,20 +13,19 @@
     <version>1.0.2.RELEASE</version>
     <packaging>jar</packaging>
     <dependencies>
-        <!--SpringBoot自定义自动化配置依赖-->
+        <!--SpringBoot AutoConfigure Dependency-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-autoconfigure</artifactId>
         </dependency>
         <!-- @ConfigurationProperties annotation processing (metadata for IDEs) -->
-        <!--元数据依赖，用于IDEs工具application.yml/properties提示使用-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-configuration-processor</artifactId>
             <optional>true</optional>
         </dependency>
 
-        <!--MyBatis-Enhance核心依赖-->
+        <!--MyBatis-Enhance Core Dependency-->
         <dependency>
             <groupId>com.gitee.hengboy</groupId>
             <artifactId>mybatis-enhance-core</artifactId>
