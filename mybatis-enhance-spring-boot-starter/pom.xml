@@ -14,7 +14,7 @@
     <version>1.0.2.RELEASE</version>
     <packaging>jar</packaging>
     <dependencies>
-        <!--自动化配置依赖-->
+        <!--Enhance AutoConfigure Dependency-->
         <dependency>
             <groupId>com.gitee.hengboy</groupId>
             <artifactId>mybatis-enhance-spring-boot-autoconfigure</artifactId>
