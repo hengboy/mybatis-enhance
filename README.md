@@ -1,6 +1,6 @@
 ### 欢迎使用MyBatis Enhance
 
-[TOC]
+[MENU]
 
 
 [![Maven central](https://maven-badges.herokuapp.com/maven-central/com.gitee.hengboy/mybatis-enhance-spring-boot-starter/badge.svg)](https://maven-badges.herokuapp.com/maven-central/com.gitee.hengboy/mybatis-enhance-spring-boot-starter) 
