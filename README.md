@@ -201,3 +201,10 @@ public interface UserInfoMapper extends EnhanceMapper<UserInfoEntity, Integer> {
 
 #### 敬请期待DSL动态查询
 `Enhance`内部默认支持了`单表`的数据操作方法，但是我们平时在项目中多表查询是最普遍的，我结合了`QueryDSL`动态查询框架的优点将部分的基础实现迁移到了`Enhance`框架内，极大的方便了多表联合查询以及动态返回任意`数据实体(Entity)`、`数据映射实体（DTO）`等。
+
+#### 欢迎加群交流
+Enhance 交流群 ①：782540319
+
+SpringBoot 核心技术①：373229384
+
+SpringBoot 核心技术②：588351309
